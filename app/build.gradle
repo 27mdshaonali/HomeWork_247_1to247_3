@@ -12,6 +12,7 @@ android {
         targetSdk 35
         versionCode 1
         versionName "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,4 +45,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:6.6.2'
     //noinspection UseTomlInstead
     implementation 'com.squareup.picasso:picasso:2.8'
+    //noinspection UseTomlInstead
+    implementation 'com.github.fornewid:neumorphism:0.3.2'
+    //noinspection UseTomlInstead
+    implementation "androidx.multidex:multidex:2.0.1"
 }

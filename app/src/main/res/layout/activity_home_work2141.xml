@@ -48,6 +48,8 @@
                     android:id="@+id/HW214_1SubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:text="Title"
                     android:textColor="#373737"
                     android:textSize="18sp"
@@ -88,6 +90,7 @@
                             android:textColor="#373737"
                             android:textColorHint="#D0373737"
                             android:textSize="16sp"
+                            android:layout_marginTop="15dp"
                             tools:ignore="Autofill,HardcodedText" />
 
                         <Button
@@ -95,12 +98,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
-                            android:background="#C2185B"
+                            android:background="@drawable/singecolor_button"
                             android:text="Check Number"
                             android:textAllCaps="false"
+                            android:textColor="#ffffff"
                             android:textSize="16sp" />
 
                         <TextView
+                            android:visibility="gone"
                             android:id="@+id/resultTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

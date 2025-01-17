@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="#F6F6F6"
+        app:cardBackgroundColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

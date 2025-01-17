@@ -4,37 +4,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#EEE64A19"
+    android:orientation="vertical"
     tools:context=".TenHomeWorks">
 
     <LinearLayout
-        android:background="#E4E1E1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
-        <TextView
-            android:textColor="#373737"
+        <soup.neumorphism.NeumorphTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:elevation="10dp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:text="Home Work 214.1-214.5 and 232.1-232.5"
-            android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
 
         <GridView
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:id="@+id/gridView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
             android:gravity="center"
             android:horizontalSpacing="0dp"
             android:numColumns="2"
@@ -42,8 +42,6 @@
             android:verticalSpacing="0dp" />
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>
