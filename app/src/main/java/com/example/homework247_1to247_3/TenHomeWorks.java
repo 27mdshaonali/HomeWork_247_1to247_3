@@ -2,6 +2,7 @@ package com.example.homework247_1to247_3;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -145,6 +146,17 @@ public class TenHomeWorks extends AppCompatActivity {
             tenHomeWorkSubtitle.setText(arrayList.get(i).get("subtitle"));
 
             cardItemView.setOnClickListener(v -> {
+
+                if (i == 0) {
+
+                    HomeWork214_1.HW214_1TITLE = arrayList.get(i).get("title");
+                    HomeWork214_1.HW214_1SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    Intent intent = new Intent(TenHomeWorks.this, HomeWork214_1.class);
+                    startActivity(intent);
+
+                }
+
 
 //                tenItemImage.setImageResource(Integer.parseInt(arrayList.get(i).get("image")));
 //                tenHomeWorkTitle.setText(arrayList.get(i).get("title"));

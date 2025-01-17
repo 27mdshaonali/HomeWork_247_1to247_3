@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4E1E1"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -12,6 +13,7 @@
         android:layout_gravity="center"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/white"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -41,6 +43,7 @@
                 android:padding="10dp">
 
                 <TextView
+                    android:textColor="#373737"
                     android:id="@+id/homeWorkTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -55,6 +58,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:textColor="#373737"
                     android:id="@+id/homeWorkSubtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
