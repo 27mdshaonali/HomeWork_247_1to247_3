@@ -52,31 +52,31 @@ public class TenHomeWorks extends AppCompatActivity {
         HashMap<String, String> item1 = new HashMap<>();
         item1.put("image", String.valueOf(R.drawable.shaon));
         item1.put("title", "HomeWork 214.1");
-        item1.put("subtitle", "Description for Homework 214.1");
+        item1.put("subtitle", "Write a program to check whether a number is divisible by 5 and 11 or not");
         arrayList.add(item1);
 
         HashMap<String, String> item2 = new HashMap<>();
         item2.put("image", String.valueOf(R.drawable.home));
         item2.put("title", "HomeWork 214.2");
-        item2.put("subtitle", "Description for Homework 214.2");
+        item2.put("subtitle", "Write a program to check whether a year is leap year or not");
         arrayList.add(item2);
 
         HashMap<String, String> item3 = new HashMap<>();
         item3.put("image", String.valueOf(R.drawable.shaon));
         item3.put("title", "HomeWork 214.3");
-        item3.put("subtitle", "Description for Homework 214.3");
+        item3.put("subtitle", "Write a program to input week number and output the week day.");
         arrayList.add(item3);
 
         HashMap<String, String> item4 = new HashMap<>();
         item4.put("image", String.valueOf(R.drawable.home));
         item4.put("title", "HomeWork 214.4");
-        item4.put("subtitle", "Description for Homework 214.4");
+        item4.put("subtitle", "Write a program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer");
         arrayList.add(item4);
 
         HashMap<String, String> item5 = new HashMap<>();
         item5.put("image", String.valueOf(R.drawable.shaon));
         item5.put("title", "HomeWork 214.5");
-        item5.put("subtitle", "Description for Homework 214.5");
+        item5.put("subtitle", "Write a program to input electricity unit charges and calculate total electricity bill");
         arrayList.add(item5);
 
         HashMap<String, String> item6 = new HashMap<>();
@@ -140,11 +140,15 @@ public class TenHomeWorks extends AppCompatActivity {
             TextView tenHomeWorkTitle = myView.findViewById(R.id.homeWorkTitle);
             TextView tenHomeWorkSubtitle = myView.findViewById(R.id.homeWorkSubtitle);
 
+            tenItemImage.setImageResource(Integer.parseInt(arrayList.get(i).get("image")));
+            tenHomeWorkTitle.setText(arrayList.get(i).get("title"));
+            tenHomeWorkSubtitle.setText(arrayList.get(i).get("subtitle"));
+
             cardItemView.setOnClickListener(v -> {
 
-                tenItemImage.setImageResource(Integer.parseInt(arrayList.get(i).get("image")));
-                tenHomeWorkTitle.setText(arrayList.get(i).get("title"));
-                tenHomeWorkSubtitle.setText(arrayList.get(i).get("subtitle"));
+//                tenItemImage.setImageResource(Integer.parseInt(arrayList.get(i).get("image")));
+//                tenHomeWorkTitle.setText(arrayList.get(i).get("title"));
+//                tenHomeWorkSubtitle.setText(arrayList.get(i).get("subtitle"));
 
             });
 
