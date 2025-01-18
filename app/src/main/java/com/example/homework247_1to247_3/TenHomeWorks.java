@@ -69,7 +69,7 @@ public class TenHomeWorks extends AppCompatActivity {
         arrayList.add(item3);
 
         HashMap<String, String> item4 = new HashMap<>();
-        item4.put("image", String.valueOf(R.drawable.home));
+        item4.put("image", String.valueOf(R.drawable.gpa100));
         item4.put("title", "HomeWork 214.4");
         item4.put("subtitle", "Write a program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer");
         arrayList.add(item4);
