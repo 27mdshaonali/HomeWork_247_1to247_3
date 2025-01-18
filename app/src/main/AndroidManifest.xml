@@ -17,6 +17,15 @@
         android:theme="@style/Theme.HomeWork247_1To247_3"
         tools:targetApi="31">
         <activity
+            android:name=".HomeWork214_4"
+            android:exported="false" />
+        <activity
+            android:name=".HomeWork214_3"
+            android:exported="false" />
+        <activity
+            android:name=".HomeWork214_2"
+            android:exported="false" />
+        <activity
             android:name=".HomeWork214_1"
             android:exported="false" />
         <activity

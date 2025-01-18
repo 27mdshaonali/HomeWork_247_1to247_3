@@ -51,19 +51,19 @@ public class TenHomeWorks extends AppCompatActivity {
     public void populateData() {
 
         HashMap<String, String> item1 = new HashMap<>();
-        item1.put("image", String.valueOf(R.drawable.shaon));
+        item1.put("image", String.valueOf(R.drawable.divisible));
         item1.put("title", "HomeWork 214.1");
         item1.put("subtitle", "Write a program to check whether a number is divisible by 5 and 11 or not");
         arrayList.add(item1);
 
         HashMap<String, String> item2 = new HashMap<>();
-        item2.put("image", String.valueOf(R.drawable.home));
+        item2.put("image", String.valueOf(R.drawable.leap_year));
         item2.put("title", "HomeWork 214.2");
         item2.put("subtitle", "Write a program to check whether a year is leap year or not");
         arrayList.add(item2);
 
         HashMap<String, String> item3 = new HashMap<>();
-        item3.put("image", String.valueOf(R.drawable.shaon));
+        item3.put("image", String.valueOf(R.drawable.number_7));
         item3.put("title", "HomeWork 214.3");
         item3.put("subtitle", "Write a program to input week number and output the week day.");
         arrayList.add(item3);
@@ -155,6 +155,23 @@ public class TenHomeWorks extends AppCompatActivity {
                     Intent intent = new Intent(TenHomeWorks.this, HomeWork214_1.class);
                     startActivity(intent);
 
+                } else if (i == 1) {
+
+                    HomeWork214_2.HW214_2TITLE = arrayList.get(i).get("title");
+                    HomeWork214_2.HW214_2SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork214_2.class));
+
+                } else if (i == 2) {
+                    HomeWork214_3.HW214_3TITLE = arrayList.get(i).get("title");
+                    HomeWork214_3.HW214_3SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork214_3.class));
+                } else if (i == 3) {
+                    HomeWork214_4.HW214_4TITLE = arrayList.get(i).get("title");
+                    HomeWork214_4.HW214_4SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork214_4.class));
                 }
 
 
