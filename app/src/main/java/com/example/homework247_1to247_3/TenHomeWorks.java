@@ -83,31 +83,31 @@ public class TenHomeWorks extends AppCompatActivity {
         HashMap<String, String> item6 = new HashMap<>();
         item6.put("image", String.valueOf(R.drawable.multiplication2));
         item6.put("title", "HomeWork 232.1");
-        item6.put("subtitle", "Description for Homework 232.1");
+        item6.put("subtitle", "Write a program to display the multiplication table of a given integer");
         arrayList.add(item6);
 
         HashMap<String, String> item7 = new HashMap<>();
         item7.put("image", String.valueOf(R.drawable.shaon));
         item7.put("title", "HomeWork 232.2");
-        item7.put("subtitle", "Description for Homework 232.2");
+        item7.put("subtitle", "Write a program to display the N terms of even number and their sum");
         arrayList.add(item7);
 
         HashMap<String, String> item8 = new HashMap<>();
         item8.put("image", String.valueOf(R.drawable.home));
         item8.put("title", "HomeWork 232.3");
-        item8.put("subtitle", "Description for Homework 232.3");
+        item8.put("subtitle", "Write a program to display the sum of the series upto n terms");
         arrayList.add(item8);
 
         HashMap<String, String> item9 = new HashMap<>();
         item9.put("image", String.valueOf(R.drawable.shaon));
         item9.put("title", "HomeWork 232.4");
-        item9.put("subtitle", "Description for Homework 232.4");
+        item9.put("subtitle", "Write a program to display the N terms of square natural number and their sum");
         arrayList.add(item9);
 
         HashMap<String, String> item10 = new HashMap<>();
         item10.put("image", String.valueOf(R.drawable.home));
         item10.put("title", "HomeWork 232.5");
-        item10.put("subtitle", "Description for Homework 232.5");
+        item10.put("subtitle", "Write a program to check whether a number is palindrome or not");
         arrayList.add(item10);
 
 
@@ -177,6 +177,8 @@ public class TenHomeWorks extends AppCompatActivity {
                     HomeWork214_5.HW214_5SUBTITLE = arrayList.get(i).get("subtitle");
 
                     startActivity(new Intent(TenHomeWorks.this, HomeWork214_5.class));
+                } else if (i == 5) {
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork232_1.class));
                 }
 
 
