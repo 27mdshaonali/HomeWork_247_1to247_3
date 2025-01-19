@@ -75,13 +75,13 @@ public class TenHomeWorks extends AppCompatActivity {
         arrayList.add(item4);
 
         HashMap<String, String> item5 = new HashMap<>();
-        item5.put("image", String.valueOf(R.drawable.shaon));
+        item5.put("image", String.valueOf(R.drawable.electricity_bill));
         item5.put("title", "HomeWork 214.5");
         item5.put("subtitle", "Write a program to input electricity unit charges and calculate total electricity bill");
         arrayList.add(item5);
 
         HashMap<String, String> item6 = new HashMap<>();
-        item6.put("image", String.valueOf(R.drawable.home));
+        item6.put("image", String.valueOf(R.drawable.multiplication2));
         item6.put("title", "HomeWork 232.1");
         item6.put("subtitle", "Description for Homework 232.1");
         arrayList.add(item6);
@@ -172,6 +172,11 @@ public class TenHomeWorks extends AppCompatActivity {
                     HomeWork214_4.HW214_4SUBTITLE = arrayList.get(i).get("subtitle");
 
                     startActivity(new Intent(TenHomeWorks.this, HomeWork214_4.class));
+                } else if (i == 4) {
+                    HomeWork214_5.HW214_5TITLE = arrayList.get(i).get("title");
+                    HomeWork214_5.HW214_5SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork214_5.class));
                 }
 
 
