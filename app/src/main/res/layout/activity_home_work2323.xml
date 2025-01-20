@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEE64A19"
-    tools:context=".HomeWork232_1">
+    tools:context=".HomeWork232_3">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 tools:ignore="UselessParent">
 
                 <TextView
-                    android:id="@+id/HW232_1Title"
+                    android:id="@+id/HW232_3Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title"
@@ -45,7 +45,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
-                    android:id="@+id/HW232_1SubTitle"
+                    android:id="@+id/HW232_3SubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -84,7 +84,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Enter an integer number: "
+                            android:text="Input the number or terms: "
                             android:textColor="#373737"
                             android:textSize="16sp" />
 
@@ -94,7 +94,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:background="@null"
-                            android:hint="Integer number"
+                            android:hint="Enter an integer number"
                             android:inputType="number"
                             android:textColor="#373737"
                             android:textColorHint="#D0373737"
@@ -102,26 +102,51 @@
                             tools:ignore="Autofill,HardcodedText" />
 
                         <Button
-                            android:id="@+id/getMultiplicationButton"
+                            android:id="@+id/getSeriesAndSumButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
                             android:background="@drawable/singecolor_button"
-                            android:text="Get Multiplication Table"
+                            android:text="Get Series and It's Sum"
                             android:textAllCaps="false"
                             android:textColor="#ffffff"
                             android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/resultTextView"
+                        <ScrollView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:text="Your entered number is "
-                            android:textColor="#373737"
-                            android:textSize="16sp"
-                            android:visibility="gone"
-                            tools:ignore="HardcodedText" />
+                            tools:ignore="NestedScrolling">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/resultTextView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Your entered number is "
+                                    android:textColor="#373737"
+                                    android:textSize="16sp"
+                                    android:visibility="gone"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/resultTextView2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Your entered number is "
+                                    android:textColor="#373737"
+                                    android:textSize="16sp"
+                                    android:visibility="gone"
+                                    tools:ignore="HardcodedText" />
+
+                            </LinearLayout>
+
+                        </ScrollView>
 
 
                     </LinearLayout>

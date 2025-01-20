@@ -87,13 +87,13 @@ public class TenHomeWorks extends AppCompatActivity {
         arrayList.add(item6);
 
         HashMap<String, String> item7 = new HashMap<>();
-        item7.put("image", String.valueOf(R.drawable.shaon));
+        item7.put("image", String.valueOf(R.drawable.even2));
         item7.put("title", "HomeWork 232.2");
         item7.put("subtitle", "Write a program to display the N terms of even number and their sum");
         arrayList.add(item7);
 
         HashMap<String, String> item8 = new HashMap<>();
-        item8.put("image", String.valueOf(R.drawable.home));
+        item8.put("image", String.valueOf(R.drawable.series));
         item8.put("title", "HomeWork 232.3");
         item8.put("subtitle", "Write a program to display the sum of the series upto n terms");
         arrayList.add(item8);
@@ -178,7 +178,20 @@ public class TenHomeWorks extends AppCompatActivity {
 
                     startActivity(new Intent(TenHomeWorks.this, HomeWork214_5.class));
                 } else if (i == 5) {
+                    HomeWork232_1.HW232_1TITLE = arrayList.get(i).get("title");
+                    HomeWork232_1.HW232_1SUBTITLE = arrayList.get(i).get("subtitle");
+
                     startActivity(new Intent(TenHomeWorks.this, HomeWork232_1.class));
+                } else if (i == 6) {
+                    HomeWork232_2.HW232_2TITLE = arrayList.get(i).get("title");
+                    HomeWork232_2.HW232_2SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork232_2.class));
+                } else if (i == 7) {
+                    HomeWork232_3.HW232_3TITLE = arrayList.get(i).get("title");
+                    HomeWork232_3.HW232_3SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork232_3.class));
                 }
 
 
