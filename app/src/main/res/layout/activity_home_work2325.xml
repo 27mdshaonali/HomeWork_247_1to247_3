@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEE64A19"
-    tools:context=".HomeWork232_4">
+    tools:context=".HomeWork232_5">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 tools:ignore="UselessParent">
 
                 <TextView
-                    android:id="@+id/HW232_4Title"
+                    android:id="@+id/HW232_5Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title"
@@ -45,7 +45,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
-                    android:id="@+id/HW232_4SubTitle"
+                    android:id="@+id/HW232_5SubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -84,39 +84,39 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Write number to display the N terms of square number: "
+                            android:text="Enter a word or number to check whether a palindrome or not: "
                             android:textColor="#373737"
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/userInputtedNumber"
+                            android:id="@+id/userInputted"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:background="@null"
-                            android:hint="Enter an integer number"
-                            android:inputType="number"
+                            android:hint="Enter word or number"
+                            android:inputType="text"
                             android:textColor="#373737"
                             android:textColorHint="#D0373737"
                             android:textSize="16sp"
                             tools:ignore="Autofill,HardcodedText" />
 
                         <Button
-                            android:id="@+id/getSquireAndSumButton"
+                            android:id="@+id/checkPalindromeButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
                             android:background="@drawable/singecolor_button"
-                            android:text="Get Root number and It's Sum"
+                            android:text="Check Palindrome or Not"
                             android:textAllCaps="false"
                             android:textColor="#ffffff"
                             android:textSize="16sp" />
 
                         <ScrollView
-                            android:paddingBottom="30dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
+                            android:paddingBottom="30dp"
                             tools:ignore="NestedScrolling">
 
                             <LinearLayout

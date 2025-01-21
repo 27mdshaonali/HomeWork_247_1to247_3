@@ -99,7 +99,7 @@ public class TenHomeWorks extends AppCompatActivity {
         arrayList.add(item8);
 
         HashMap<String, String> item9 = new HashMap<>();
-        item9.put("image", String.valueOf(R.drawable.shaon));
+        item9.put("image", String.valueOf(R.drawable.square_root));
         item9.put("title", "HomeWork 232.4");
         item9.put("subtitle", "Write a program to display the N terms of square natural number and their sum");
         arrayList.add(item9);
@@ -192,6 +192,17 @@ public class TenHomeWorks extends AppCompatActivity {
                     HomeWork232_3.HW232_3SUBTITLE = arrayList.get(i).get("subtitle");
 
                     startActivity(new Intent(TenHomeWorks.this, HomeWork232_3.class));
+                } else if (i == 8) {
+                    HomeWork232_4.HW232_4TITLE = arrayList.get(i).get("title");
+                    HomeWork232_4.HW232_4SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork232_4.class));
+
+                } else {
+                    HomeWork232_5.HW232_5TITLE = arrayList.get(i).get("title");
+                    HomeWork232_5.HW232_5SUBTITLE = arrayList.get(i).get("subtitle");
+
+                    startActivity(new Intent(TenHomeWorks.this, HomeWork232_5.class));
                 }
 
 
