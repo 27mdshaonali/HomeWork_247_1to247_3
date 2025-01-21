@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 0) {
                     startActivity(new Intent(MainActivity.this, TenHomeWorks.class));
                 } else if (i == 1) {
-                    startActivity(new Intent(MainActivity.this, AudioPlayer.class));
+                    startActivity(new Intent(MainActivity.this, HomeWork247_2.class));
                 } else {
                     startActivity(new Intent(MainActivity.this, EmergencyHelpApp.class));
                 }
