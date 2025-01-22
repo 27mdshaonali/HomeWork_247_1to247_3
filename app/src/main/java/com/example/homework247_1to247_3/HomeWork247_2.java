@@ -2,6 +2,7 @@ package com.example.homework247_1to247_3;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -130,15 +131,32 @@ public class HomeWork247_2 extends AppCompatActivity {
 
             cardItemView.setOnClickListener(v -> {
 
-                // Handle item click event here
-                if (title.contains("James")) {
+
+                if (title != null && title.contains("James")) {
                     // Start HomeWork247_1 activity
+                    startActivity(new Intent(HomeWork247_2.this, JamesSongsList.class));
 
                     Toast.makeText(HomeWork247_2.this, "James", Toast.LENGTH_SHORT).show();
 
-                } else if (title.contains("Ayub Bacchhu")) {
+                } else if (title != null && title.contains("Ayub Bacchhu")) {
 
                     Toast.makeText(HomeWork247_2.this, "Ayub Bacchhu", Toast.LENGTH_SHORT).show();
+
+                } else if (title != null && title.contains("Runa Laila")) {
+
+                    Toast.makeText(HomeWork247_2.this, "Runa Laila", Toast.LENGTH_SHORT).show();
+
+                } else if (title != null && title.contains("Bappa Mozumbar")) {
+
+                    Toast.makeText(HomeWork247_2.this, "Bappa Mozumbar", Toast.LENGTH_SHORT).show();
+
+                } else if (title != null && title.contains("Andrew Kishore")) {
+
+                    Toast.makeText(HomeWork247_2.this, "Andrew Kishore", Toast.LENGTH_SHORT).show();
+
+                } else if (title != null && title.contains("Sabina Yasmin")) {
+
+                    Toast.makeText(HomeWork247_2.this, "Sabina Yasmin", Toast.LENGTH_SHORT).show();
 
                 }
 
