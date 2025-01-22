@@ -26,15 +26,17 @@
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/itemImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
                 android:layout_marginEnd="15dp"
-                android:src="@drawable/home"
+                android:src="@drawable/shaon"
                 app:riv_corner_radius="8dp" />
 
             <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -44,7 +46,6 @@
                     android:id="@+id/homeWorkTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:gravity="start"
                     android:text="HomeWork 247.1"
                     android:textSize="22sp"

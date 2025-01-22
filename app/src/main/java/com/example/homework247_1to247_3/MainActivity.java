@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(item1);
 
         HashMap<String, Object> item2 = new HashMap<>();
-        item2.put("image", R.drawable.home); // Direct integer resource ID
+        item2.put("image", R.drawable.shaon); // Direct integer resource ID
         item2.put("title", "Homework 247.2");
         item2.put("subtitle", "Description for Homework 247.2");
         arrayList.add(item2);

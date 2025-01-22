@@ -19,6 +19,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -51,61 +53,61 @@ public class TenHomeWorks extends AppCompatActivity {
     public void populateData() {
 
         HashMap<String, String> item1 = new HashMap<>();
-        item1.put("image", String.valueOf(R.drawable.divisible));
+        item1.put("image", "http://binarybird.xyz/Audio%20Player%20Images/divisible.png");
         item1.put("title", "HomeWork 214.1");
         item1.put("subtitle", "Write a program to check whether a number is divisible by 5 and 11 or not");
         arrayList.add(item1);
 
         HashMap<String, String> item2 = new HashMap<>();
-        item2.put("image", String.valueOf(R.drawable.leap_year));
+        item2.put("image", "http://binarybird.xyz/Audio%20Player%20Images/leap_year.png");
         item2.put("title", "HomeWork 214.2");
         item2.put("subtitle", "Write a program to check whether a year is leap year or not");
         arrayList.add(item2);
 
         HashMap<String, String> item3 = new HashMap<>();
-        item3.put("image", String.valueOf(R.drawable.number_7));
+        item3.put("image", "http://binarybird.xyz/Audio%20Player%20Images/number_7.png");
         item3.put("title", "HomeWork 214.3");
         item3.put("subtitle", "Write a program to input week number and output the week day.");
         arrayList.add(item3);
 
         HashMap<String, String> item4 = new HashMap<>();
-        item4.put("image", String.valueOf(R.drawable.gpa100));
+        item4.put("image", "http://binarybird.xyz/Audio%20Player%20Images/gpa100.png");
         item4.put("title", "HomeWork 214.4");
         item4.put("subtitle", "Write a program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer");
         arrayList.add(item4);
 
         HashMap<String, String> item5 = new HashMap<>();
-        item5.put("image", String.valueOf(R.drawable.electricity_bill));
+        item5.put("image", "http://binarybird.xyz/Audio%20Player%20Images/electricity_bill.png");
         item5.put("title", "HomeWork 214.5");
         item5.put("subtitle", "Write a program to input electricity unit charges and calculate total electricity bill");
         arrayList.add(item5);
 
         HashMap<String, String> item6 = new HashMap<>();
-        item6.put("image", String.valueOf(R.drawable.multiplication2));
+        item6.put("image", "http://binarybird.xyz/Audio%20Player%20Images/multiplication2.png");
         item6.put("title", "HomeWork 232.1");
         item6.put("subtitle", "Write a program to display the multiplication table of a given integer");
         arrayList.add(item6);
 
         HashMap<String, String> item7 = new HashMap<>();
-        item7.put("image", String.valueOf(R.drawable.even2));
+        item7.put("image", "http://binarybird.xyz/Audio%20Player%20Images/even2.png");
         item7.put("title", "HomeWork 232.2");
         item7.put("subtitle", "Write a program to display the N terms of even number and their sum");
         arrayList.add(item7);
 
         HashMap<String, String> item8 = new HashMap<>();
-        item8.put("image", String.valueOf(R.drawable.series));
+        item8.put("image", "http://binarybird.xyz/Audio%20Player%20Images/series.png");
         item8.put("title", "HomeWork 232.3");
         item8.put("subtitle", "Write a program to display the sum of the series upto n terms");
         arrayList.add(item8);
 
         HashMap<String, String> item9 = new HashMap<>();
-        item9.put("image", String.valueOf(R.drawable.square_root));
+        item9.put("image", "http://binarybird.xyz/Audio%20Player%20Images/square_root.png");
         item9.put("title", "HomeWork 232.4");
         item9.put("subtitle", "Write a program to display the N terms of square natural number and their sum");
         arrayList.add(item9);
 
         HashMap<String, String> item10 = new HashMap<>();
-        item10.put("image", String.valueOf(R.drawable.home));
+        item10.put("image", "http://binarybird.xyz/Audio%20Player%20Images/palindrome.png");
         item10.put("title", "HomeWork 232.5");
         item10.put("subtitle", "Write a program to check whether a number is palindrome or not");
         arrayList.add(item10);
@@ -141,9 +143,17 @@ public class TenHomeWorks extends AppCompatActivity {
             TextView tenHomeWorkTitle = myView.findViewById(R.id.homeWorkTitle);
             TextView tenHomeWorkSubtitle = myView.findViewById(R.id.homeWorkSubtitle);
 
-            tenItemImage.setImageResource(Integer.parseInt(arrayList.get(i).get("image")));
-            tenHomeWorkTitle.setText(arrayList.get(i).get("title"));
-            tenHomeWorkSubtitle.setText(arrayList.get(i).get("subtitle"));
+            HashMap<String, String> hashMap = arrayList.get(i);
+
+            String imageUrl = hashMap.get("image");
+            String title = hashMap.get("title");
+            String subtitle = hashMap.get("subtitle");
+
+            Picasso.get().load(imageUrl).placeholder(R.drawable.shaon).into(tenItemImage);
+
+            tenHomeWorkTitle.setText(title);
+            tenHomeWorkSubtitle.setText(subtitle);
+            //tenHomeWorkSubtitle.setText(arrayList.get(i).get("subtitle"));
 
             cardItemView.setOnClickListener(v -> {
 

@@ -8,8 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -113,6 +115,7 @@ public class HomeWork247_2 extends AppCompatActivity {
             ImageView itemImage = myViw.findViewById(R.id.itemImage);
             TextView homeWorkTitle = myViw.findViewById(R.id.homeWorkTitle);
             TextView homeWorkSubtitle = myViw.findViewById(R.id.homeWorkSubtitle);
+            LinearLayout cardItemView = myViw.findViewById(R.id.cardItemView);
 
             HashMap<String, String> hashMap = arrayList.get(i);
 
@@ -124,6 +127,22 @@ public class HomeWork247_2 extends AppCompatActivity {
 
             homeWorkTitle.setText(title);
             homeWorkSubtitle.setText(subtitle);
+
+            cardItemView.setOnClickListener(v -> {
+
+                // Handle item click event here
+                if (title.contains("James")) {
+                    // Start HomeWork247_1 activity
+
+                    Toast.makeText(HomeWork247_2.this, "James", Toast.LENGTH_SHORT).show();
+
+                } else if (title.contains("Ayub Bacchhu")) {
+
+                    Toast.makeText(HomeWork247_2.this, "Ayub Bacchhu", Toast.LENGTH_SHORT).show();
+
+                }
+
+            });
 
 
             return myViw;
