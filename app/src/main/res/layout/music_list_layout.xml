@@ -24,7 +24,7 @@
             android:weightSum="5">
 
             <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/itemImage"
+                android:id="@+id/artistSongImage"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="10dp"
@@ -73,6 +73,7 @@
                 android:padding="11dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/play_icon"
+                android:tag="PLAY_NOW"
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>
