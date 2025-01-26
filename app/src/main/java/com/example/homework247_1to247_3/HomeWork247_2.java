@@ -146,6 +146,11 @@ public class HomeWork247_2 extends AppCompatActivity {
                     startActivity(intent);
 
 
+                } else if (i == 2) {
+                    Intent intent = new Intent(HomeWork247_2.this, RunaLailaSongsList.class);
+                    intent.putExtra("title", hashMapTitle);
+                    intent.putExtra("image_url", hashMapImageUrl);
+                    startActivity(intent);
                 }
 
             });
