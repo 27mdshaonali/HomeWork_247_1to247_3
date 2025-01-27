@@ -63,8 +63,8 @@ public class HomeWork247_2 extends AppCompatActivity {
         arrayList.add(item2);
 
         HashMap<String, String> item3 = new HashMap<>();
-        item3.put("image_url", "http://binarybird.xyz/Audio%20Player%20Images/runa_laila.jpg");
-        item3.put("title", "Runa Laila");
+        item3.put("image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Kanak%20Chapa/Kanak%20Chapa.jpg");
+        item3.put("title", "Kanak Chapa");
         item3.put("subtitle", "Bangla Audio Songs");
         arrayList.add(item3);
 
@@ -147,13 +147,19 @@ public class HomeWork247_2 extends AppCompatActivity {
 
 
                 } else if (i == 2) {
-                    Intent intent = new Intent(HomeWork247_2.this, RunaLailaSongsList.class);
+                    Intent intent = new Intent(HomeWork247_2.this, KanakChapaLailaSongsList.class);
+                    intent.putExtra("title", hashMapTitle);
+                    intent.putExtra("image_url", hashMapImageUrl);
+                    startActivity(intent);
+                } else if (i == 3) {
+                    Intent intent = new Intent(HomeWork247_2.this, BappaMozumdar.class);
                     intent.putExtra("title", hashMapTitle);
                     intent.putExtra("image_url", hashMapImageUrl);
                     startActivity(intent);
                 }
 
             });
+
 
             return myViw;
         }

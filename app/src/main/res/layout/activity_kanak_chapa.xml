@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#EEE64A19"
     android:orientation="vertical"
-    tools:context=".AyubBacchhuSongsList">
+    tools:context=".KanakChapaLailaSongsList">
 
     <LinearLayout
         android:background="@color/white"

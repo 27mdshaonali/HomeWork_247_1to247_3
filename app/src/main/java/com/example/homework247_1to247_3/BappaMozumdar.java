@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,20 +24,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RunaLailaSongsList extends AppCompatActivity {
-
+public class BappaMozumdar extends AppCompatActivity {
     ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+
     ImageView artistImage;
     TextView artistName;
     ListView listView;
-    ImageView currentlyPlayingButton;
     MediaPlayer mediaPlayer;
+    ImageView currentlyPlayingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_runa_laila);
+        setContentView(R.layout.activity_bappa_mozumdar);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -47,14 +46,13 @@ public class RunaLailaSongsList extends AppCompatActivity {
 
         initialize();
 
-        String imageUrl = getIntent().getStringExtra("image_url");
-        String artistNameStr = getIntent().getStringExtra("title");
+        String stringArtistImageUrl = getIntent().getStringExtra("image_url");
+        String stringArtistName = getIntent().getStringExtra("title");
 
-        Picasso.get().load(imageUrl).placeholder(R.drawable.shaon).into(artistImage);
-        artistName.setText(artistNameStr);
+        Picasso.get().load(stringArtistImageUrl).placeholder(R.drawable.shaon).into(artistImage);
+        artistName.setText(stringArtistName);
 
         populateData();
-
         MyAdapter myAdapter = new MyAdapter();
         listView.setAdapter(myAdapter);
 
@@ -62,49 +60,42 @@ public class RunaLailaSongsList extends AppCompatActivity {
     }
 
     public void initialize() {
+
         artistImage = findViewById(R.id.artistImage);
         artistName = findViewById(R.id.artistName);
         listView = findViewById(R.id.listView);
-        currentlyPlayingButton = null;
         mediaPlayer = new MediaPlayer();
+        currentlyPlayingButton = null;
 
     }
 
     public void populateData() {
         HashMap<String, String> item1 = new HashMap<>();
-        item1.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Runa%20Laila/Runa%20Laila.jpg");
-        item1.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/James/%e0%a6%95%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%be%20%e0%a6%a4%e0%a7%81%e0%a6%ae%e0%a6%bf%20%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8%e0%a6%9a%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%a8%e0%a7%80%20%e0%a6%b9%e0%a6%af%e0%a6%bc%e0%a7%87%20_%20Kobita%20_%20James%20_%20Lyrics.mp3");
-        item1.put("song_name", "Song Name 1");
+        item1.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Bappa%20Mozumdar/Bappa%20Mozumdar%202.jpg");
+        item1.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/Kanak%20Chapa/%e0%a6%86%e0%a6%ae%e0%a6%bf%20%e0%a6%ae%e0%a7%87%e0%a6%b2%e0%a6%be%20%e0%a6%a5%e0%a7%87%e0%a6%95%e0%a7%87%20%e0%a6%a4%e0%a6%be%e0%a6%b2%20%e0%a6%aa%e0%a6%be%e0%a6%a4%e0%a6%be%e0%a6%b0%20-%20%e0%a6%95%e0%a6%a8%e0%a6%95%20%e0%a6%9a%e0%a6%be%e0%a6%81%e0%a6%aa%e0%a6%be%20--%20Ami%20Mela%20Theke%20Taal%20Paatar%20-%20Kanak%20Chapa.mp3");
+        item1.put("song_name", "Bappa Mozumdar");
         item1.put("song_type", "Rock");
         arrayList.add(item1);
 
         HashMap<String, String> item2 = new HashMap<>();
-        item2.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Runa%20Laila/Runa%20Laila.jpg");
-        item2.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/James/%e0%a6%95%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%be%20%e0%a6%a4%e0%a7%81%e0%a6%ae%e0%a6%bf%20%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8%e0%a6%9a%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%a8%e0%a7%80%20%e0%a6%b9%e0%a6%af%e0%a6%bc%e0%a7%87%20_%20Kobita%20_%20James%20_%20Lyrics.mp3");
-        item2.put("song_name", "Song Name 2");
+        item2.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Bappa%20Mozumdar/Bappa%20Mozumdar%202.jpg");
+        item2.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/Kanak%20Chapa/%e0%a6%86%e0%a6%ae%e0%a6%bf%20%e0%a6%ae%e0%a7%87%e0%a6%b2%e0%a6%be%20%e0%a6%a5%e0%a7%87%e0%a6%95%e0%a7%87%20%e0%a6%a4%e0%a6%be%e0%a6%b2%20%e0%a6%aa%e0%a6%be%e0%a6%a4%e0%a6%be%e0%a6%b0%20-%20%e0%a6%95%e0%a6%a8%e0%a6%95%20%e0%a6%9a%e0%a6%be%e0%a6%81%e0%a6%aa%e0%a6%be%20--%20Ami%20Mela%20Theke%20Taal%20Paatar%20-%20Kanak%20Chapa.mp3");
+        item2.put("song_name", "Bappa Mozumdar");
         item2.put("song_type", "Rock");
         arrayList.add(item2);
 
         HashMap<String, String> item3 = new HashMap<>();
-        item3.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Runa%20Laila/Runa%20Laila.jpg");
-        item3.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/James/%e0%a6%95%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%be%20%e0%a6%a4%e0%a7%81%e0%a6%ae%e0%a6%bf%20%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8%e0%a6%9a%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%a8%e0%a7%80%20%e0%a6%b9%e0%a6%af%e0%a6%bc%e0%a7%87%20_%20Kobita%20_%20James%20_%20Lyrics.mp3");
-        item3.put("song_name", "Song Name 3");
+        item3.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Bappa%20Mozumdar/Bappa%20Mozumdar%202.jpg");
+        item3.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/Kanak%20Chapa/%e0%a6%86%e0%a6%ae%e0%a6%bf%20%e0%a6%ae%e0%a7%87%e0%a6%b2%e0%a6%be%20%e0%a6%a5%e0%a7%87%e0%a6%95%e0%a7%87%20%e0%a6%a4%e0%a6%be%e0%a6%b2%20%e0%a6%aa%e0%a6%be%e0%a6%a4%e0%a6%be%e0%a6%b0%20-%20%e0%a6%95%e0%a6%a8%e0%a6%95%20%e0%a6%9a%e0%a6%be%e0%a6%81%e0%a6%aa%e0%a6%be%20--%20Ami%20Mela%20Theke%20Taal%20Paatar%20-%20Kanak%20Chapa.mp3");
+        item3.put("song_name", "Bappa Mozumdar");
         item3.put("song_type", "Rock");
         arrayList.add(item3);
-
-        HashMap<String, String> item4 = new HashMap<>();
-        item4.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Runa%20Laila/Runa%20Laila.jpg");
-        item4.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/James/%e0%a6%95%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%be%20%e0%a6%a4%e0%a7%81%e0%a6%ae%e0%a6%bf%20%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8%e0%a6%9a%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%a8%e0%a7%80%20%e0%a6%b9%e0%a6%af%e0%a6%bc%e0%a7%87%20_%20Kobita%20_%20James%20_%20Lyrics.mp3");
-        item4.put("song_name", "Song Name 4");
-        item4.put("song_type", "Rock");
-        arrayList.add(item4);
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         if (mediaPlayer.isPlaying()) {
             mediaPlayer.start();
         }
@@ -132,27 +123,24 @@ public class RunaLailaSongsList extends AppCompatActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-
             LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             @SuppressLint("ViewHolder") View myView = inflater.inflate(R.layout.music_list_layout, viewGroup, false);
 
-            LinearLayout linearLayout = myView.findViewById(R.id.cardItemView);
-            TextView songName = myView.findViewById(R.id.songName);
-            TextView songType = myView.findViewById(R.id.songDescription);
-            ImageView songImage = myView.findViewById(R.id.artistSongImage);
+            ImageView artistSongImage = myView.findViewById(R.id.artistSongImage);
+            TextView artistSongName = myView.findViewById(R.id.songName);
+            TextView artistSongDescription = myView.findViewById(R.id.songDescription);
             ImageView playButton = myView.findViewById(R.id.playButton);
 
-            String stringSongName = arrayList.get(i).get("song_name");
-            String stringSongType = arrayList.get(i).get("song_type");
-            String stringSongImage = arrayList.get(i).get("artist_image_url");
-            String stringAudioUrl = arrayList.get(i).get("audio_url");
+            String hashMapImageUrl = arrayList.get(i).get("artist_image_url");
+            String hashMapAudioUrl = arrayList.get(i).get("audio_url");
+            String hashMapSongName = arrayList.get(i).get("song_name");
+            String hashMapSongDescription = arrayList.get(i).get("song_type");
 
-            Picasso.get().load(stringSongImage).placeholder(R.drawable.shaon).into(songImage);
-            songName.setText(stringSongName);
+            Picasso.get().load(hashMapImageUrl).placeholder(R.drawable.shaon).into(artistSongImage);
+            artistSongName.setText(hashMapSongName);
 
             playButton.setTag("PLAY_NOW");
             playButton.setImageResource(R.drawable.play_icon2);
-
             playButton.setOnClickListener(v -> {
 
                 try {
@@ -176,7 +164,7 @@ public class RunaLailaSongsList extends AppCompatActivity {
                         }
 
                         mediaPlayer.reset();
-                        mediaPlayer.setDataSource(stringAudioUrl);
+                        mediaPlayer.setDataSource(hashMapAudioUrl);
                         mediaPlayer.prepareAsync();
 
                         mediaPlayer.setOnPreparedListener(mp -> {
@@ -211,6 +199,7 @@ public class RunaLailaSongsList extends AppCompatActivity {
 
 
             });
+
 
             return myView;
         }

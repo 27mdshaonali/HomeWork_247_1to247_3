@@ -38,7 +38,7 @@ public class AyubBacchhuSongsList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_runa_laila);
+        setContentView(R.layout.activity_kanak_chapa);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -73,7 +73,7 @@ public class AyubBacchhuSongsList extends AppCompatActivity {
     public void populateData() {
 
         HashMap<String, String> item1 = new HashMap<>();
-        item1.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/James/James%20Song%20Cover.jpg");
+        item1.put("artist_image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Ayub%20Bacchu/Ayub%20Bacchu.jpg");
         item1.put("audio_url", "http://192.168.0.103/HomeWork%20247.2/Songs/Ayub%20Bacchu/%e0%a6%85%e0%a6%ad%e0%a6%bf%e0%a6%ae%e0%a6%be%e0%a6%a8%20%e0%a6%a8%e0%a6%bf%e0%a7%9f%e0%a7%87%20-%20Lyrics%20-%20Oviman%20Niye%20-%20%e0%a6%86%e0%a6%87%e0%a6%af%e0%a6%bc%e0%a7%81%e0%a6%ac%20%e0%a6%ac%e0%a6%be%e0%a6%9a%e0%a7%8d%e0%a6%9a%e0%a7%81%20-%20Ayub%20Bachchu%20-%20LRB.mp3");
         item1.put("song_name", "অভিমান নিয়ে - Lyrics - Oviman Niye - আইয়ুব বাচ্চু - Ayub Bachchu - LRB");
         item1.put("song_type", "Rock");

@@ -18,7 +18,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".RunaLailaSongsList"
+            android:name=".BappaMozumdar"
+            android:exported="false" />
+        <activity
+            android:name=".KanakChapaLailaSongsList"
             android:exported="false" />
         <activity
             android:name=".AyubBacchhuSongsList"
