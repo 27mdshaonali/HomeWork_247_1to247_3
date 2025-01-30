@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FullDistrictInfo"
+            android:exported="false" />
+        <activity
+            android:name=".HomeWork247_3"
+            android:exported="false" />
+        <activity
             android:name=".BappaMozumdar"
             android:exported="false" />
         <activity
@@ -61,9 +67,6 @@
             android:exported="false" />
         <activity
             android:name=".HomeWork214_1"
-            android:exported="false" />
-        <activity
-            android:name=".EmergencyHelpApp"
             android:exported="false" />
         <activity
             android:name=".AudioPlayer"

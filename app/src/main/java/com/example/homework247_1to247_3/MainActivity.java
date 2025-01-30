@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (i == 1) {
                     startActivity(new Intent(MainActivity.this, HomeWork247_2.class));
                 } else {
-                    startActivity(new Intent(MainActivity.this, EmergencyHelpApp.class));
+                    startActivity(new Intent(MainActivity.this, HomeWork247_3.class));
                 }
             });
 
