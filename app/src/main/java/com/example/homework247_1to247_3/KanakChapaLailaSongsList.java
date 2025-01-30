@@ -2,6 +2,7 @@ package com.example.homework247_1to247_3;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -205,6 +206,16 @@ public class KanakChapaLailaSongsList extends AppCompatActivity {
 
             Picasso.get().load(stringSongImage).placeholder(R.drawable.shaon).into(songImage);
             songName.setText(stringSongName);
+
+            linearLayout.setOnClickListener(v -> {
+
+                AudioPlayer.MUSIC_SOURCE = stringAudioUrl;
+                AudioPlayer.SONG_NAME = stringSongName;
+                AudioPlayer.IMAGE_URL = stringSongImage;
+
+                startActivity(new Intent(KanakChapaLailaSongsList.this, AudioPlayer.class));
+
+            });
 
             playButton.setTag("PLAY_NOW");
             playButton.setImageResource(R.drawable.play_icon2);

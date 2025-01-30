@@ -11,7 +11,7 @@
         app:cardBackgroundColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
 
@@ -22,13 +22,13 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="15dp">
+            android:padding="12dp">
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/itemImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:layout_marginEnd="15dp"
                 android:src="@drawable/shaon"
@@ -62,7 +62,9 @@
                     android:text="Subtitle Text"
                     android:textSize="18sp"
                     android:textStyle="normal"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
 
             </LinearLayout>
 

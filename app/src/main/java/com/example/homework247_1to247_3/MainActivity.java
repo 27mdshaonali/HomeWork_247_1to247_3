@@ -56,21 +56,21 @@ public class MainActivity extends AppCompatActivity {
     public void populateData() {
         // Adding multiple items to the list
         HashMap<String, Object> item1 = new HashMap<>();
-        item1.put("image", R.drawable.shaon); // Direct integer resource ID
+        item1.put("image", R.drawable.homework); // Direct integer resource ID
         item1.put("title", "Homework 247.1");
-        item1.put("subtitle", "Description for Homework 247.1");
+        item1.put("subtitle", "Home Work 214.1-214.5 and 232.1-232.5");
         arrayList.add(item1);
 
         HashMap<String, Object> item2 = new HashMap<>();
-        item2.put("image", R.drawable.shaon); // Direct integer resource ID
+        item2.put("image", R.drawable.music); // Direct integer resource ID
         item2.put("title", "Homework 247.2");
-        item2.put("subtitle", "Description for Homework 247.2");
+        item2.put("subtitle", "Audio Player");
         arrayList.add(item2);
 
         HashMap<String, Object> item3 = new HashMap<>();
-        item3.put("image", R.drawable.shaon); // Direct integer resource ID
+        item3.put("image", R.drawable.emergency); // Direct integer resource ID
         item3.put("title", "Homework 247.3");
-        item3.put("subtitle", "Description for Homework 247.3");
+        item3.put("subtitle", "Emergency Help");
         arrayList.add(item3);
     }
 

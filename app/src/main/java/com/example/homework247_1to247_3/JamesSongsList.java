@@ -1,6 +1,7 @@
 package com.example.homework247_1to247_3;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -208,6 +211,7 @@ public class JamesSongsList extends AppCompatActivity {
             TextView songName = myView.findViewById(R.id.songName);
             TextView songDescription = myView.findViewById(R.id.songDescription);
             ImageView playButton = myView.findViewById(R.id.playButton);
+            LinearLayout cardItemView = myView.findViewById(R.id.cardItemView);
 
             HashMap<String, String> song = arrayList.get(position);
 
@@ -219,6 +223,15 @@ public class JamesSongsList extends AppCompatActivity {
             Picasso.get().load(artistImageUrl).placeholder(R.drawable.shaon).into(artistSongImage);
             songName.setText(songTitle);
 //            songDescription.setText(songType);
+
+            cardItemView.setOnClickListener(v -> {
+
+                AudioPlayer.MUSIC_SOURCE = audioUrl;
+                AudioPlayer.SONG_NAME = songTitle;
+                AudioPlayer.IMAGE_URL = artistImageUrl;
+                startActivity(new Intent(JamesSongsList.this, AudioPlayer.class));
+
+            });
 
             playButton.setTag("PLAY_NOW");
             playButton.setImageResource(R.drawable.play_icon2);
