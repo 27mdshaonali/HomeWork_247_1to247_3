@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class HomeWork247_3 extends AppCompatActivity {
 
     private final String[] divisions = {"Choose a Division", "Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"};
-    private final String[][] districts = {{}, {"Choose a district", "Dhaka", "Gazipur", "Narayanganj", "Tangail", "Madaripur", "Shariatpur", "Manikganj", "Narsingdi", "Rajbari", "Munshiganj", "Kishoreganj", "Mymensingh", "Faridpur"}, {"Choose a district", "Chattogram", "Cox's Bazar", "Feni", "Bandarban", "Lakshmipur", "Comilla", "Chandpur", "Noakhali", "Brahmanbaria", "Khagrachari", "Rangamati", "Chattogram Hill Tracts"}, {"Choose a district", "Rajshahi", "Bogura", "Naogaon", "Pabna", "Joypurhat", "Chapainawabganj", "Natore", "Sirajganj"}, {"Choose a district", "Khulna", "Jessore", "Kushtia", "Bagerhat", "Chuadanga", "Jhenaidah", "Magura", "Meherpur", "Narail", "Satkhira"}, {"Choose a district", "Barishal", "Bhola", "Patuakhali", "Jhalokathi", "Pirojpur", "Barguna"}, {"Choose a district", "Sylhet", "Moulvibazar", "Sunamganj", "Habiganj"}, {"Choose a district", "Rangpur", "Dinajpur", "Kurigram", "Gaibandha", "Lalmonirhat", "Nilphamari", "Panchagarh", "Thakurgaon"}, {"Choose a district", "Mymensingh", "Jamalpur", "Netrokona", "Sherpur"}};
+    private final String[][] districts = {{}, {"Choose a district", "Dhaka", "Gazipur", "Narayanganj", "Tangail", "Madaripur", "Shariatpur", "Manikganj", "Narsingdi", "Rajbari", "Munshiganj", "Kishoreganj", "Mymensingh", "Faridpur"}, {"Choose a district", "Chattogram", "Cox's Bazar", "Feni", "Bandarban", "Lakshmipur", "Cumilla", "Chandpur", "Noakhali", "Brahmanbaria", "Khagrachhari", "Rangamati"}, {"Choose a district", "Rajshahi", "Bogura", "Naogaon", "Pabna", "Joypurhat", "Chapainawabganj", "Natore", "Sirajganj"}, {"Choose a district", "Khulna", "Jessore", "Kushtia", "Bagerhat", "Chuadanga", "Jhenaidah", "Magura", "Meherpur", "Narail", "Satkhira"}, {"Choose a district", "Barishal", "Bhola", "Patuakhali", "Jhalokathi", "Pirojpur", "Barguna"}, {"Choose a district", "Sylhet", "Moulvibazar", "Sunamganj", "Habiganj"}, {"Choose a district", "Rangpur", "Dinajpur", "Kurigram", "Gaibandha", "Lalmonirhat", "Nilphamari", "Panchagarh", "Thakurgaon"}, {"Choose a district", "Mymensingh", "Jamalpur", "Netrokona", "Sherpur"}};
 
 
     private Spinner spinnerDivision, spinnerDistrict;
@@ -87,6 +87,8 @@ public class HomeWork247_3 extends AppCompatActivity {
                             Toast.makeText(HomeWork247_3.this, "You have selected Kishoreganj in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Manikganj")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Manikganj in Dhaka", Toast.LENGTH_SHORT).show();
+                        } else if (selectedDistrict.equals("Madaripur")) {
+                            Toast.makeText(HomeWork247_3.this, "You have selected Madaripur in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Munshiganj")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Munshiganj in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Narayanganj")) {
@@ -95,10 +97,14 @@ public class HomeWork247_3 extends AppCompatActivity {
                             Toast.makeText(HomeWork247_3.this, "You have selected Narsingdi in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Rajbari")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Rajbari in Dhaka", Toast.LENGTH_SHORT).show();
+                        } else if (selectedDistrict.equals("Mymensingh")) {
+                            Toast.makeText(HomeWork247_3.this, "You have selected Mymensingh in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Shariatpur")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Shariatpur in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Tangail")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Tangail in Dhaka", Toast.LENGTH_SHORT).show();
+                        } else if (selectedDistrict.equals("Faridpur")) {
+                            Toast.makeText(HomeWork247_3.this, "You have selected Faridpur in Dhaka", Toast.LENGTH_SHORT).show();
                         }
                     } else if (selectedDivision.equals("Chattogram")) {
                         if (selectedDistrict.equals("Bandarban")) {
@@ -147,7 +153,7 @@ public class HomeWork247_3 extends AppCompatActivity {
                             Toast.makeText(HomeWork247_3.this, "You have selected Bagerhat in Khulna", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Chuadanga")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Chuadanga in Khulna", Toast.LENGTH_SHORT).show();
-                        } else if (selectedDistrict.equals("Jashore")) {
+                        } else if (selectedDistrict.equals("Jessore")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Jashore in Khulna", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Jhenaidah")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Jhenaidah in Khulna", Toast.LENGTH_SHORT).show();
@@ -171,8 +177,8 @@ public class HomeWork247_3 extends AppCompatActivity {
                             Toast.makeText(HomeWork247_3.this, "You have selected Barishal in Barishal", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Bhola")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Bhola in Barishal", Toast.LENGTH_SHORT).show();
-                        } else if (selectedDistrict.equals("Jhalokati")) {
-                            Toast.makeText(HomeWork247_3.this, "You have selected Jhalokati in Barishal", Toast.LENGTH_SHORT).show();
+                        } else if (selectedDistrict.equals("Jhalokathi")) {
+                            Toast.makeText(HomeWork247_3.this, "You have selected Jhalokathi in Barishal", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Patuakhali")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Patuakhali in Barishal", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Pirojpur")) {
@@ -211,8 +217,8 @@ public class HomeWork247_3 extends AppCompatActivity {
                             Toast.makeText(HomeWork247_3.this, "You have selected Jamalpur in Mymensingh", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Mymensingh")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Mymensingh in Mymensingh", Toast.LENGTH_SHORT).show();
-                        } else if (selectedDistrict.equals("Netrakona")) {
-                            Toast.makeText(HomeWork247_3.this, "You have selected Netrakona in Mymensingh", Toast.LENGTH_SHORT).show();
+                        } else if (selectedDistrict.equals("Netrokona")) {
+                            Toast.makeText(HomeWork247_3.this, "You have selected Netraokona in Mymensingh", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Sherpur")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Sherpur in Mymensingh", Toast.LENGTH_SHORT).show();
                         }
