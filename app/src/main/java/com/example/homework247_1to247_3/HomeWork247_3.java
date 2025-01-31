@@ -1,5 +1,6 @@
 package com.example.homework247_1to247_3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -80,7 +81,13 @@ public class HomeWork247_3 extends AppCompatActivity {
                     // Show specific messages based on division and district
                     if (selectedDivision.equals("Dhaka")) {
                         if (selectedDistrict.equals("Dhaka")) {
-                            Toast.makeText(HomeWork247_3.this, "You have selected Dhaka in Dhaka", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(HomeWork247_3.this, FullDistrictInfo.class);
+                            FullDistrictInfo.DISTRICT_NAME = selectedDistrict;
+                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg";
+                            startActivity(intent);
+
+
                         } else if (selectedDistrict.equals("Gazipur")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Gazipur in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Kishoreganj")) {
@@ -140,6 +147,10 @@ public class HomeWork247_3 extends AppCompatActivity {
                         } else if (selectedDistrict.equals("Naogaon")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Naogaon in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Natore")) {
+                            FullDistrictInfo.DISTRICT_NAME = selectedDistrict;
+                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg";
+                            startActivity(new Intent(HomeWork247_3.this, FullDistrictInfo.class));
+
                             Toast.makeText(HomeWork247_3.this, "You have selected Natore in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Pabna")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Pabna in Rajshahi", Toast.LENGTH_SHORT).show();

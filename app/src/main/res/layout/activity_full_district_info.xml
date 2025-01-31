@@ -23,12 +23,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:text="Select Your District"
+            android:text="Selected District"
             android:textAlignment="center"
             android:textColor="#A5161515"
             android:textSize="24sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
+
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B70288D1"
+            android:numColumns="3" />
 
 
     </LinearLayout>
