@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class HomeWork247_3 extends AppCompatActivity {
 
     private final String[] divisions = {"Choose a Division", "Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"};
@@ -82,10 +84,21 @@ public class HomeWork247_3 extends AppCompatActivity {
                     if (selectedDivision.equals("Dhaka")) {
                         if (selectedDistrict.equals("Dhaka")) {
 
-                            Intent intent = new Intent(HomeWork247_3.this, FullDistrictInfo.class);
-                            FullDistrictInfo.DISTRICT_NAME = selectedDistrict;
-                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg";
+                            Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
+                            intent.putExtra("district_name", "Dhaka");
+                            intent.putExtra("image_url", "your_image_url_here");
+                            ArrayList<String> infoList = new ArrayList<>();
+                            infoList.add("Police Station");
+                            infoList.add("Heritage Place");
+                            intent.putStringArrayListExtra("district_info_list", infoList);
                             startActivity(intent);
+
+
+
+//                            Intent intent = new Intent(HomeWork247_3.this, FullDistrictInfo.class);
+//                            FullDistrictInfo.DISTRICT_NAME = selectedDistrict;
+//                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg";
+//                            startActivity(intent);
 
 
                         } else if (selectedDistrict.equals("Gazipur")) {
@@ -147,9 +160,22 @@ public class HomeWork247_3 extends AppCompatActivity {
                         } else if (selectedDistrict.equals("Naogaon")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Naogaon in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Natore")) {
-                            FullDistrictInfo.DISTRICT_NAME = selectedDistrict;
-                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg";
-                            startActivity(new Intent(HomeWork247_3.this, FullDistrictInfo.class));
+
+
+                            Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
+                            intent.putExtra("district_name", selectedDistrict);
+                            intent.putExtra("image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+                            ArrayList<String> infoList = new ArrayList<>();
+                            infoList.add("Police Station");
+                            infoList.add("Heritage Place");
+                            infoList.add("Daily News Paper");
+                            intent.putStringArrayListExtra("district_info_list", infoList);
+                            startActivity(intent);
+
+
+//                            FullDistrictInfo.DISTRICT_NAME = selectedDistrict;
+//                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg";
+//                            startActivity(new Intent(HomeWork247_3.this, FullDistrictInfo.class));
 
                             Toast.makeText(HomeWork247_3.this, "You have selected Natore in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Pabna")) {

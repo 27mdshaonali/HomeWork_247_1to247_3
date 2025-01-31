@@ -1,7 +1,7 @@
 package com.example.homework247_1to247_3;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -25,57 +25,67 @@ import java.util.HashMap;
 
 public class FullDistrictInfo extends AppCompatActivity {
 
-    public static String DISTRICT_NAME = "";
-    public static String IMAGE_URL = "";
+    private String districtName;
+    private String imageUrl;
+    private final ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
-
-    ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-    HashMap<String, String> hashMap = new HashMap<>();
-    TextView districtTV;
-    GridView gridView;
+    private TextView districtTV;
+    private GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_full_district_info);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         initializeViews();
 
-        populateData();
+        // Get data from Intent
+        Intent intent = getIntent();
+        districtName = intent.getStringExtra("district_name");
+        imageUrl = intent.getStringExtra("image_url");
+        ArrayList<String> districtInfoList = intent.getStringArrayListExtra("district_info_list");
+
+        // Populate data dynamically
+        populateData(districtInfoList);
+
+        // Set up the adapter
         MyAdapter myAdapter = new MyAdapter();
         gridView.setAdapter(myAdapter);
 
-        districtTV.setText(DISTRICT_NAME);
-
-
+        districtTV.setText(districtName);
     }
 
-    public void initializeViews() {
+    private void initializeViews() {
         districtTV = findViewById(R.id.districtTV);
         gridView = findViewById(R.id.gridView);
     }
 
-    public void populateData() {
+    private void populateData(ArrayList<String> districtInfoList) {
+        arrayList.clear(); // Clear previous data to avoid duplication
 
-        HashMap<String, String> item1 = new HashMap<>();
-        item1.put("image_url", IMAGE_URL);
-        item1.put("districtName", DISTRICT_NAME);
-        arrayList.add(item1);
-
-        HashMap<String, String> item2 = new HashMap<>();
-        item2.put("image_url", IMAGE_URL);
-        item2.put("districtName", DISTRICT_NAME);
-        arrayList.add(item2);
-
-
+        if (districtInfoList != null) {
+            for (String info : districtInfoList) {
+                HashMap<String, String> item = new HashMap<>();
+                item.put("image_url", imageUrl); // Assign image URL
+                item.put("info_title", info); // Individual district info item
+                arrayList.add(item);
+            }
+        }
     }
 
-    public class MyAdapter extends BaseAdapter {
+    static class ViewHolder {
+        TextView textView, subTextView;
+        ImageView imageView;
+    }
+
+    private class MyAdapter extends BaseAdapter {
         @Override
         public int getCount() {
             return arrayList.size();
@@ -83,37 +93,38 @@ public class FullDistrictInfo extends AppCompatActivity {
 
         @Override
         public Object getItem(int i) {
-            return null;
+            return arrayList.get(i);
         }
 
         @Override
         public long getItemId(int i) {
-            return 0;
+            return i;
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            @SuppressLint({"ViewHolder", "InflateParams"}) View myView = inflater.inflate(R.layout.ten_items, null);
+        public View getView(int i, View convertView, ViewGroup parent) {
+            ViewHolder holder;
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.ten_items, parent, false);
 
-            TextView textView = myView.findViewById(R.id.homeWorkTitle);
-            TextView textView2 = myView.findViewById(R.id.homeWorkSubtitle);
-            ImageView imageView = myView.findViewById(R.id.itemImage);
+                holder = new ViewHolder();
+                holder.textView = convertView.findViewById(R.id.homeWorkTitle);
+                holder.imageView = convertView.findViewById(R.id.itemImage);
+                holder.subTextView = convertView.findViewById(R.id.homeWorkSubtitle);
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder) convertView.getTag();
+            }
 
-            HashMap<String, String> hashMap = arrayList.get(i);
-            textView.setGravity(Gravity.CENTER);
-            textView2.setVisibility(View.GONE);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            HashMap<String, String> item = arrayList.get(i);
+            holder.textView.setGravity(Gravity.CENTER);
+            holder.textView.setText(item.get("info_title"));
+            holder.imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            holder.subTextView.setVisibility(View.GONE);
+            Picasso.get().load(item.get("image_url")).placeholder(R.drawable.shaon).into(holder.imageView);
 
-            String imageUrl = hashMap.get("image_url");
-            String districtName = hashMap.get("districtName");
-
-            textView.setText(districtName);
-            Picasso.get().load(imageUrl).placeholder(R.drawable.shaon).into(imageView);
-
-
-            return myView;
+            return convertView;
         }
     }
-
 }
