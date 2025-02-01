@@ -85,14 +85,24 @@ public class HomeWork247_3 extends AppCompatActivity {
                         if (selectedDistrict.equals("Dhaka")) {
 
                             Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
-                            intent.putExtra("district_name", "Dhaka");
-                            intent.putExtra("image_url", "your_image_url_here");
+                            intent.putExtra("district_name", "Natore");
+
+// Text list (District info items)
                             ArrayList<String> infoList = new ArrayList<>();
                             infoList.add("Police Station");
                             infoList.add("Heritage Place");
-                            intent.putStringArrayListExtra("district_info_list", infoList);
-                            startActivity(intent);
+                            infoList.add("School");
 
+// Corresponding image URLs
+                            ArrayList<String> imageList = new ArrayList<>();
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+
+                            intent.putStringArrayListExtra("district_info_list", infoList);
+                            intent.putStringArrayListExtra("image_urls", imageList);
+
+                            startActivity(intent);
 
 
 //                            Intent intent = new Intent(HomeWork247_3.this, FullDistrictInfo.class);
@@ -164,12 +174,24 @@ public class HomeWork247_3 extends AppCompatActivity {
 
                             Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
                             intent.putExtra("district_name", selectedDistrict);
-                            intent.putExtra("image_url", "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+
+// Text list (District info items)
                             ArrayList<String> infoList = new ArrayList<>();
                             infoList.add("Police Station");
                             infoList.add("Heritage Place");
-                            infoList.add("Daily News Paper");
+                            infoList.add("Police Station");
+                            infoList.add("Heritage Place");
+
+// Corresponding image URLs
+                            ArrayList<String> imageList = new ArrayList<>();
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
+
                             intent.putStringArrayListExtra("district_info_list", infoList);
+                            intent.putStringArrayListExtra("image_urls", imageList);
+
                             startActivity(intent);
 
 
@@ -177,7 +199,7 @@ public class HomeWork247_3 extends AppCompatActivity {
 //                            FullDistrictInfo.IMAGE_URL = "http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg";
 //                            startActivity(new Intent(HomeWork247_3.this, FullDistrictInfo.class));
 
-                            Toast.makeText(HomeWork247_3.this, "You have selected Natore in Rajshahi", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(HomeWork247_3.this, "You have selected Natore in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Pabna")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Pabna in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Rajshahi")) {

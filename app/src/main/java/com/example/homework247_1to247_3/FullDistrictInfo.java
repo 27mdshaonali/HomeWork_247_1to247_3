@@ -26,7 +26,6 @@ import java.util.HashMap;
 public class FullDistrictInfo extends AppCompatActivity {
 
     private String districtName;
-    private String imageUrl;
     private final ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
     private TextView districtTV;
@@ -49,11 +48,11 @@ public class FullDistrictInfo extends AppCompatActivity {
         // Get data from Intent
         Intent intent = getIntent();
         districtName = intent.getStringExtra("district_name");
-        imageUrl = intent.getStringExtra("image_url");
         ArrayList<String> districtInfoList = intent.getStringArrayListExtra("district_info_list");
+        ArrayList<String> imageUrls = intent.getStringArrayListExtra("image_urls");
 
         // Populate data dynamically
-        populateData(districtInfoList);
+        populateData(districtInfoList, imageUrls);
 
         // Set up the adapter
         MyAdapter myAdapter = new MyAdapter();
@@ -67,14 +66,14 @@ public class FullDistrictInfo extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
     }
 
-    private void populateData(ArrayList<String> districtInfoList) {
+    private void populateData(ArrayList<String> districtInfoList, ArrayList<String> imageUrls) {
         arrayList.clear(); // Clear previous data to avoid duplication
 
-        if (districtInfoList != null) {
-            for (String info : districtInfoList) {
+        if (districtInfoList != null && imageUrls != null && districtInfoList.size() == imageUrls.size()) {
+            for (int i = 0; i < districtInfoList.size(); i++) {
                 HashMap<String, String> item = new HashMap<>();
-                item.put("image_url", imageUrl); // Assign image URL
-                item.put("info_title", info); // Individual district info item
+                item.put("image_url", imageUrls.get(i)); // Assign image URL
+                item.put("info_title", districtInfoList.get(i)); // Individual district info item
                 arrayList.add(item);
             }
         }
