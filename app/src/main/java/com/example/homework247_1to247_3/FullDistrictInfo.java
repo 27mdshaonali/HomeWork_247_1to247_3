@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -82,6 +84,7 @@ public class FullDistrictInfo extends AppCompatActivity {
     static class ViewHolder {
         TextView textView, subTextView;
         ImageView imageView;
+        LinearLayout cardItemView;
     }
 
     private class MyAdapter extends BaseAdapter {
@@ -108,6 +111,7 @@ public class FullDistrictInfo extends AppCompatActivity {
                 convertView = inflater.inflate(R.layout.district_info, parent, false);
 
                 holder = new ViewHolder();
+                holder.cardItemView = convertView.findViewById(R.id.cardItemView);
                 holder.textView = convertView.findViewById(R.id.homeWorkTitle);
                 holder.imageView = convertView.findViewById(R.id.itemImage);
                 holder.subTextView = convertView.findViewById(R.id.homeWorkSubtitle);
@@ -122,6 +126,11 @@ public class FullDistrictInfo extends AppCompatActivity {
             holder.imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             holder.subTextView.setVisibility(View.GONE);
             Picasso.get().load(item.get("image_url")).placeholder(R.drawable.shaon).into(holder.imageView);
+            holder.cardItemView.setOnClickListener(v -> {
+
+                Toast.makeText(getApplicationContext(), item.get("info_title")+" has been Clicked", Toast.LENGTH_SHORT).show();
+
+            });
 
             return convertView;
         }
