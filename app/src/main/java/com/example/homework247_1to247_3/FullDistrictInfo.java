@@ -2,6 +2,7 @@ package com.example.homework247_1to247_3;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -32,7 +33,7 @@ import java.util.HashMap;
 public class FullDistrictInfo extends AppCompatActivity {
 
     private final ArrayList<HashMap<String, String>> districtData = new ArrayList<>();
-    private TextView districtTV;
+    private TextView districtTV, emergencyCall;
     private GridView gridView;
     private ArrayList<String> districtInfoList, imageUrls;
     private ArrayList<String> districtInfoList2, imageUrls2;
@@ -55,11 +56,21 @@ public class FullDistrictInfo extends AppCompatActivity {
         populateData();
         setupGridView();
         setupImageSlider();
+        emergencyCall();
     }
 
     private void initializeViews() {
         districtTV = findViewById(R.id.districtTV);
         gridView = findViewById(R.id.gridView);
+        emergencyCall = findViewById(R.id.emergencyCall);
+    }
+
+    private void emergencyCall() {
+        emergencyCall.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:999"));
+            startActivity(intent);
+        });
     }
 
     private void retrieveIntentData() {

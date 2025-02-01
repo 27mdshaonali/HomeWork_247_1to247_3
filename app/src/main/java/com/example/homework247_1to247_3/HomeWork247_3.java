@@ -89,15 +89,33 @@ public class HomeWork247_3 extends AppCompatActivity {
 
                             // Text list (District info items)
                             ArrayList<String> infoList = new ArrayList<>();
+                            infoList.add("News");
+                            infoList.add("Hospital");
+                            infoList.add("Blood Bank");
+                            infoList.add("Ambulance");
+                            infoList.add("Doctor");
+                            infoList.add("Fire Service");
+                            infoList.add("Journalist");
+                            infoList.add("DPDC");
+                            infoList.add("Educational Institution");
+                            infoList.add("Help Line");
                             infoList.add("Police Station");
-                            infoList.add("Heritage Place");
-                            infoList.add("School");
+                            infoList.add("Lawyer");
 
                             // Corresponding image URLs
                             ArrayList<String> imageList = new ArrayList<>();
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/news.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/hospital.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/blood.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/ambulance.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/doctor.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/fire_truck.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/journalist.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/electric_pole.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/education2.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/help_line.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/police.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/lawyer.png");
 
                             intent.putStringArrayListExtra("district_info_list", infoList);
                             intent.putStringArrayListExtra("image_urls", imageList);

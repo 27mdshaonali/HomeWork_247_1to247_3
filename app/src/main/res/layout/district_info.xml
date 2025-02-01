@@ -33,12 +33,12 @@
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/itemImage"
-                    android:layout_width="140dp"
+                    android:layout_width="90dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/shaon"
-                    android:layout_marginTop="3dp"
                     app:riv_corner_radius="8dp" />
 
                 <LinearLayout
@@ -48,7 +48,7 @@
                     android:layout_marginStart="0dp"
                     android:gravity="start"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="7dp">
 
                     <TextView
                         android:id="@+id/homeWorkTitle"
@@ -59,6 +59,7 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="2"
+                        android:minLines="2"
                         android:text="HomeWork 214.1"
                         android:textColor="#373737"
                         android:textSize="16sp"
