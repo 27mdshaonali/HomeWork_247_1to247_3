@@ -15,7 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.AnimationTypes;
@@ -28,9 +31,9 @@ import java.util.HashMap;
 
 public class FullDistrictInfo extends AppCompatActivity {
 
+    private final ArrayList<HashMap<String, String>> districtData = new ArrayList<>();
     private TextView districtTV;
     private GridView gridView;
-    private ArrayList<HashMap<String, String>> districtData = new ArrayList<>();
     private ArrayList<String> districtInfoList, imageUrls;
     private ArrayList<String> districtInfoList2, imageUrls2;
     private String districtName;
@@ -38,7 +41,13 @@ public class FullDistrictInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_full_district_info);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            v.setPadding(insets.getInsets(WindowInsetsCompat.Type.systemBars()).left, insets.getInsets(WindowInsetsCompat.Type.systemBars()).top, insets.getInsets(WindowInsetsCompat.Type.systemBars()).right, insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom);
+            return insets;
+        });
 
         initializeViews();
         retrieveIntentData();
@@ -121,7 +130,7 @@ public class FullDistrictInfo extends AppCompatActivity {
 
             // Check if the image URL is valid
             if (imageUrl != null && !imageUrl.isEmpty()) {
-                slideModels.add(new SlideModel(imageUrl, title, ScaleTypes.CENTER_CROP));
+                slideModels.add(new SlideModel(imageUrl, title, ScaleTypes.FIT));
             } else {
                 Log.e("FullDistrictInfo", "Invalid image URL at index " + i);
             }
@@ -135,6 +144,11 @@ public class FullDistrictInfo extends AppCompatActivity {
         }
     }
 
+    private static class ViewHolder {
+        TextView textView, subTextView;
+        ImageView imageView;
+        LinearLayout cardItemView;
+    }
 
     private class MyAdapter extends BaseAdapter {
         @Override
@@ -182,11 +196,5 @@ public class FullDistrictInfo extends AppCompatActivity {
 
             return convertView;
         }
-    }
-
-    private static class ViewHolder {
-        TextView textView, subTextView;
-        ImageView imageView;
-        LinearLayout cardItemView;
     }
 }
