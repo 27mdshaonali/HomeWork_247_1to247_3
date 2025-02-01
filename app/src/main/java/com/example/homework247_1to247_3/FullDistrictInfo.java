@@ -105,7 +105,7 @@ public class FullDistrictInfo extends AppCompatActivity {
             ViewHolder holder;
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = inflater.inflate(R.layout.ten_items, parent, false);
+                convertView = inflater.inflate(R.layout.district_info, parent, false);
 
                 holder = new ViewHolder();
                 holder.textView = convertView.findViewById(R.id.homeWorkTitle);
