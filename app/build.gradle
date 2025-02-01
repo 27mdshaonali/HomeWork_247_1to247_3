@@ -43,10 +43,12 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     //noinspection UseTomlInstead
     implementation 'com.airbnb.android:lottie:6.6.2'
-    //noinspection UseTomlInstead
+    //noinspection GradleDependency,UseTomlInstead
     implementation 'com.squareup.picasso:picasso:2.8'
     //noinspection UseTomlInstead
     implementation 'com.github.fornewid:neumorphism:0.3.2'
     //noinspection UseTomlInstead
     implementation "androidx.multidex:multidex:2.0.1"
+    //noinspection UseTomlInstead
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 }

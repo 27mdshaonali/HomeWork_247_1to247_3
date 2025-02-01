@@ -85,7 +85,7 @@ public class HomeWork247_3 extends AppCompatActivity {
                         if (selectedDistrict.equals("Dhaka")) {
 
                             Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
-                            intent.putExtra("district_name", "Natore");
+                            intent.putExtra("district_name", selectedDistrict);
 
 // Text list (District info items)
                             ArrayList<String> infoList = new ArrayList<>();
