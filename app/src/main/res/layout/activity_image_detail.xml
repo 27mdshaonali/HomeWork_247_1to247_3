@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="#EEE64A19"
     android:orientation="vertical"
+    android:id="@+id/main"
     tools:context=".HomeWork247_3">
 
 
@@ -21,7 +22,8 @@
             android:id="@+id/detailImageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/shaon" />
 
         <TextView
             android:id="@+id/detailTextView"
@@ -29,8 +31,24 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="16dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="This is Image Detail Activity"
+            android:textColor="#E64A19"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+
+        <TextView
+            android:id="@+id/detailTextViewDistrictName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:text="District Name"
+            android:textColor="#E64A19"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
 </LinearLayout>

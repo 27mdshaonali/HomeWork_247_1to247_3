@@ -37,7 +37,7 @@ public class FullDistrictInfo extends AppCompatActivity {
     private GridView gridView;
     private ArrayList<String> districtInfoList, imageUrls;
     private ArrayList<String> districtInfoList2, imageUrls2;
-    private String districtName;
+    private String districtName, divisionName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +75,7 @@ public class FullDistrictInfo extends AppCompatActivity {
 
     private void retrieveIntentData() {
         Intent intent = getIntent();
+        divisionName = intent.getStringExtra("division_name");
         districtName = intent.getStringExtra("district_name");
         districtInfoList = intent.getStringArrayListExtra("district_info_list");
         imageUrls = intent.getStringArrayListExtra("image_urls");
@@ -85,6 +86,7 @@ public class FullDistrictInfo extends AppCompatActivity {
     }
 
     private void logIntentData() {
+        Log.d("FullDistrictInfo", "divisionName: " + divisionName);
         Log.d("FullDistrictInfo", "districtName: " + districtName);
         Log.d("FullDistrictInfo", "districtInfoList: " + districtInfoList);
         Log.d("FullDistrictInfo", "imageUrls: " + imageUrls);
@@ -202,7 +204,136 @@ public class FullDistrictInfo extends AppCompatActivity {
             Picasso.get().load(item.get("image_url")).placeholder(R.drawable.shaon).into(holder.imageView);
 
             holder.cardItemView.setOnClickListener(v -> {
+                String selectedDivision = divisionName;
+                String selectedDistrict = districtName;
+
+                if (selectedDivision.equals("Dhaka")) {
+
+                    if (selectedDistrict.equals("Dhaka")) {
+                        String selectedItem = item.get("info_title");
+
+                        Intent intent = null;
+
+                        if (selectedItem != null) {
+                            switch (selectedItem) {
+                                case "Hospital":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = "Hospital";
+                                    break;
+                                case "Police Station":
+                                    ImageDetailActivity.DIS_NAME = "Police Station";
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Fire Service":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Ambulance":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Blood Bank":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Doctor":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Educational Institution":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Lawyer":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Journalist":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "DPDC":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Help Line":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "News":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                            }
+                        }
+
+                        if (intent != null) {
+                            intent.putExtra("district_name", districtName); // Passing district name for reference
+                            startActivity(intent);
+                        }
+
+                        //Dhaka District Has ended
+
+                    } else if (selectedDistrict.equals("Gazipur")) {
+                        String selectedItem = item.get("info_title");
+
+                        Intent intent = null;
+
+                        if (selectedItem != null) {
+                            switch (selectedItem) {
+                                case "Hospital":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName + " Hospital";
+                                    break;
+                                case "Police Station":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Police Station";
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Fire Service":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Ambulance":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Blood Bank":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Doctor":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Educational Institution":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Lawyer":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Journalist":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "DPDC":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Help Line":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "News":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                            }
+                        }
+
+                        if (intent != null) {
+                            intent.putExtra("district_name", districtName); // Passing district name for reference
+                            startActivity(intent);
+                        }
+
+
+                        //Gazipur District Has ended
+
+                    } else if (selectedDistrict.equals("Narayanganj")) {
+                        Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
+                        startActivity(intent);
+                    } else if (selectedDistrict.equals("Tangail")) {
+                        Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
+                        startActivity(intent);
+                    }
+
+                }
+
+
                 Toast.makeText(getApplicationContext(), "Clicked: " + item.get("info_title"), Toast.LENGTH_SHORT).show();
+
+
             });
 
             return convertView;
