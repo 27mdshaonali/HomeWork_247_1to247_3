@@ -15,11 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.AnimationTypes;
@@ -32,49 +28,23 @@ import java.util.HashMap;
 
 public class FullDistrictInfo extends AppCompatActivity {
 
-    private final ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-    private String districtName;
     private TextView districtTV;
     private GridView gridView;
+    private ArrayList<HashMap<String, String>> districtData = new ArrayList<>();
     private ArrayList<String> districtInfoList, imageUrls;
+    private ArrayList<String> districtInfoList2, imageUrls2;
+    private String districtName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_full_district_info);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         initializeViews();
-
-        // Get data from Intent
-        Intent intent = getIntent();
-        districtName = intent.getStringExtra("district_name");
-        districtInfoList = intent.getStringArrayListExtra("district_info_list");
-        imageUrls = intent.getStringArrayListExtra("image_urls");
-
-        if (districtInfoList == null || imageUrls == null) {
-            Log.e("FullDistrictInfo", "Error: districtInfoList or imageUrls is null.");
-            return;
-        }
-
-        // Populate GridView data dynamically
+        retrieveIntentData();
+        handleNullCases();
         populateData();
-
-        // Set up adapter
-        MyAdapter myAdapter = new MyAdapter();
-        gridView.setAdapter(myAdapter);
-
-        // Set district name
-        districtTV.setText(districtName);
-        districtTV.setVisibility(View.GONE);
-
-        // Setup ImageSlider with Clickable Items
+        setupGridView();
         setupImageSlider();
     }
 
@@ -83,72 +53,107 @@ public class FullDistrictInfo extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
     }
 
+    private void retrieveIntentData() {
+        Intent intent = getIntent();
+        districtName = intent.getStringExtra("district_name");
+        districtInfoList = intent.getStringArrayListExtra("district_info_list");
+        imageUrls = intent.getStringArrayListExtra("image_urls");
+        districtInfoList2 = intent.getStringArrayListExtra("district_info_list2");
+        imageUrls2 = intent.getStringArrayListExtra("image_urls2");
+
+        logIntentData();
+    }
+
+    private void logIntentData() {
+        Log.d("FullDistrictInfo", "districtName: " + districtName);
+        Log.d("FullDistrictInfo", "districtInfoList: " + districtInfoList);
+        Log.d("FullDistrictInfo", "imageUrls: " + imageUrls);
+        Log.d("FullDistrictInfo", "districtInfoList2: " + districtInfoList2);
+        Log.d("FullDistrictInfo", "imageUrls2: " + imageUrls2);
+    }
+
+    private void handleNullCases() {
+        if (districtInfoList == null) districtInfoList = new ArrayList<>();
+        if (imageUrls == null) imageUrls = new ArrayList<>();
+        if (districtInfoList2 == null) districtInfoList2 = new ArrayList<>();
+        if (imageUrls2 == null) imageUrls2 = new ArrayList<>();
+    }
+
     private void populateData() {
-        arrayList.clear();
-        if (districtInfoList != null && imageUrls != null && districtInfoList.size() == imageUrls.size()) {
-            for (int i = 0; i < districtInfoList.size(); i++) {
-                HashMap<String, String> item = new HashMap<>();
-                item.put("image_url", imageUrls.get(i));
-                item.put("info_title", districtInfoList.get(i));
-                arrayList.add(item);
-            }
+        districtData.clear();
+        int dataSize = Math.min(districtInfoList.size(), imageUrls.size());
+
+        for (int i = 0; i < dataSize; i++) {
+            HashMap<String, String> item = new HashMap<>();
+            item.put("image_url", imageUrls.get(i));
+            item.put("info_title", districtInfoList.get(i));
+            districtData.add(item);
         }
+
+
+    }
+
+    private void setupGridView() {
+        MyAdapter adapter = new MyAdapter();
+        gridView.setAdapter(adapter);
+        districtTV.setText(districtName);
+        districtTV.setVisibility(View.GONE);
     }
 
     private void setupImageSlider() {
         ImageSlider imageSlider = findViewById(R.id.image_slider);
-
-        if (imageSlider == null || imageUrls == null || districtInfoList == null) {
-            Log.e("FullDistrictInfo", "Error: ImageSlider or data is null.");
+        if (imageSlider == null) {
+            Log.e("FullDistrictInfo", "Error: ImageSlider is null.");
             return;
         }
 
-        ArrayList<SlideModel> imageList = new ArrayList<>();
-
-        for (int i = 0; i < imageUrls.size(); i++) {
-            imageList.add(new SlideModel(imageUrls.get(i), districtInfoList.get(i), ScaleTypes.CENTER_CROP));
+        if (districtInfoList2 == null || imageUrls2 == null || districtInfoList2.isEmpty() || imageUrls2.isEmpty()) {
+            Log.e("FullDistrictInfo", "Error: districtInfoList2 or imageUrls2 is empty.");
+            return;
         }
 
-        imageSlider.setImageList(imageList);
-        imageSlider.setSlideAnimation(AnimationTypes.TOSS);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+        int minSize = Math.min(districtInfoList2.size(), imageUrls2.size());
 
-        // Store the current image position manually
-        final int[] currentPosition = {0};
+        for (int i = 0; i < minSize; i++) {
+            String imageUrl = imageUrls2.get(i);
+            String title = districtInfoList2.get(i);
 
-        // Detect page change (if supported by the library)
-        imageSlider.setOnClickListener(v -> {
-            // Open detail activity with current image and text
-            Intent detailIntent = new Intent(FullDistrictInfo.this, ImageDetailActivity.class);
-            detailIntent.putExtra("image_url", imageUrls.get(currentPosition[0]));
-            detailIntent.putExtra("text", districtInfoList.get(currentPosition[0]));
-            startActivity(detailIntent);
-        });
+            // Check if the image URL is valid
+            if (imageUrl != null && !imageUrl.isEmpty()) {
+                slideModels.add(new SlideModel(imageUrl, title, ScaleTypes.CENTER_CROP));
+            } else {
+                Log.e("FullDistrictInfo", "Invalid image URL at index " + i);
+            }
+        }
+
+        if (slideModels.isEmpty()) {
+            Log.e("FullDistrictInfo", "No valid slide models created.");
+        } else {
+            imageSlider.setImageList(slideModels);
+            imageSlider.setSlideAnimation(AnimationTypes.TOSS);
+        }
     }
 
-    static class ViewHolder {
-        TextView textView, subTextView;
-        ImageView imageView;
-        LinearLayout cardItemView;
-    }
 
     private class MyAdapter extends BaseAdapter {
         @Override
         public int getCount() {
-            return arrayList.size();
+            return districtData.size();
         }
 
         @Override
-        public Object getItem(int i) {
-            return arrayList.get(i);
+        public Object getItem(int position) {
+            return districtData.get(position);
         }
 
         @Override
-        public long getItemId(int i) {
-            return i;
+        public long getItemId(int position) {
+            return position;
         }
 
         @Override
-        public View getView(int i, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -164,7 +169,7 @@ public class FullDistrictInfo extends AppCompatActivity {
                 holder = (ViewHolder) convertView.getTag();
             }
 
-            HashMap<String, String> item = arrayList.get(i);
+            HashMap<String, String> item = districtData.get(position);
             holder.textView.setGravity(Gravity.CENTER);
             holder.textView.setText(item.get("info_title"));
             holder.imageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -177,5 +182,11 @@ public class FullDistrictInfo extends AppCompatActivity {
 
             return convertView;
         }
+    }
+
+    private static class ViewHolder {
+        TextView textView, subTextView;
+        ImageView imageView;
+        LinearLayout cardItemView;
     }
 }

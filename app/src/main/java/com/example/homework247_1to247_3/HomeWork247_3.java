@@ -87,13 +87,13 @@ public class HomeWork247_3 extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
                             intent.putExtra("district_name", selectedDistrict);
 
-// Text list (District info items)
+                            // Text list (District info items)
                             ArrayList<String> infoList = new ArrayList<>();
                             infoList.add("Police Station");
                             infoList.add("Heritage Place");
                             infoList.add("School");
 
-// Corresponding image URLs
+                            // Corresponding image URLs
                             ArrayList<String> imageList = new ArrayList<>();
                             imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
                             imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
@@ -101,6 +101,17 @@ public class HomeWork247_3 extends AppCompatActivity {
 
                             intent.putStringArrayListExtra("district_info_list", infoList);
                             intent.putStringArrayListExtra("image_urls", imageList);
+
+                            ArrayList<String> infoList2 = new ArrayList<>();
+                            infoList2.add("Arnob");
+                            infoList2.add("Ayub Bacchu");
+
+                            ArrayList<String> imageList2 = new ArrayList<>();
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
+
+                            intent.putStringArrayListExtra("image_urls2", imageList2);
+                            intent.putStringArrayListExtra("district_info_list2", infoList2);
 
                             startActivity(intent);
 
@@ -112,7 +123,28 @@ public class HomeWork247_3 extends AppCompatActivity {
 
 
                         } else if (selectedDistrict.equals("Gazipur")) {
-                            Toast.makeText(HomeWork247_3.this, "You have selected Gazipur in Dhaka", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
+                            intent.putExtra("district_name", selectedDistrict);
+
+
+                            ArrayList<String> infoList2 = new ArrayList<>();
+                            infoList2.add("Arnob");
+                            infoList2.add("Ayub Bacchu");
+                            infoList2.add("Arnob");
+                            infoList2.add("Ayub Bacchu");
+
+                            ArrayList<String> imageList2 = new ArrayList<>();
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
+
+                            intent.putStringArrayListExtra("image_urls2", imageList2);
+                            intent.putStringArrayListExtra("district_info_list2", infoList2);
+
+                            startActivity(intent);
+
                         } else if (selectedDistrict.equals("Kishoreganj")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Kishoreganj in Dhaka", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Manikganj")) {
