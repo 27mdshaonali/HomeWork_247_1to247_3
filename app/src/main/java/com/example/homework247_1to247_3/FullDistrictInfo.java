@@ -280,33 +280,43 @@ public class FullDistrictInfo extends AppCompatActivity {
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Fire Service":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Fire Service";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Ambulance":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Ambulance";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Blood Bank":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Blood Bank";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Doctor":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Doctor";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Educational Institution":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Educational Institution";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Lawyer":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Lawyer";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Journalist":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Journalist";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "DPDC":
+                                    ImageDetailActivity.DIS_NAME = districtName + " DPDC";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Help Line":
+                                    ImageDetailActivity.DIS_NAME = districtName + " Help Line";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "News":
+                                    ImageDetailActivity.DIS_NAME = districtName + " News";
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                             }
@@ -326,6 +336,38 @@ public class FullDistrictInfo extends AppCompatActivity {
                     } else if (selectedDistrict.equals("Tangail")) {
                         Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
                         startActivity(intent);
+                    }
+
+                } else if (selectedDivision.equals("Rajshahi")) {
+                    if (selectedDistrict.equals("Bogura")) {
+                        String selectedItem = item.get("info_title");
+
+                        Intent intent = null;
+
+                        if (selectedItem != null) {
+                            switch (selectedItem) {
+                                case "Police Station":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName + " Police Station";
+                                    break;
+                                case "Fire Service":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName + " Fire Service";
+                                    break;
+                                case "Ambulance":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName + " Ambulance";
+                                    break;
+                            }
+
+                        }
+
+                        if (intent != null) {
+                            intent.putExtra("district_name", districtName); // Passing district name for reference
+                            startActivity(intent);
+                        }
+
+
                     }
 
                 }

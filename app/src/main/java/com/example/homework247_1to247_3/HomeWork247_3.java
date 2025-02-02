@@ -244,7 +244,58 @@ public class HomeWork247_3 extends AppCompatActivity {
                         }
                     } else if (selectedDivision.equals("Rajshahi")) {
                         if (selectedDistrict.equals("Bogura")) {
-                            Toast.makeText(HomeWork247_3.this, "You have selected Bogura in Rajshahi", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
+                            intent.putExtra("division_name", selectedDivision);
+                            intent.putExtra("district_name", selectedDistrict);
+
+                            // Text list (District info items)
+                            ArrayList<String> infoList = new ArrayList<>();
+                            infoList.add("News");
+                            infoList.add("Hospital");
+                            infoList.add("Blood Bank");
+                            infoList.add("Ambulance");
+                            infoList.add("Doctor");
+                            infoList.add("Fire Service");
+                            infoList.add("Journalist");
+                            infoList.add("DPDC");
+                            infoList.add("Educational Institution");
+                            infoList.add("Help Line");
+                            infoList.add("Police Station");
+                            infoList.add("Lawyer");
+
+                            // Corresponding image URLs
+                            ArrayList<String> imageList = new ArrayList<>();
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/news.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/hospital.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/blood.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/ambulance.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/doctor.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/fire_truck.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/journalist.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/electric_pole.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/education2.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/help_line.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/police.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/lawyer.png");
+
+                            intent.putStringArrayListExtra("district_info_list", infoList);
+                            intent.putStringArrayListExtra("image_urls", imageList);
+
+                            ArrayList<String> infoList2 = new ArrayList<>();
+                            infoList2.add("Arnob");
+                            infoList2.add("Ayub Bacchu");
+
+                            ArrayList<String> imageList2 = new ArrayList<>();
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
+
+                            intent.putStringArrayListExtra("image_urls2", imageList2);
+                            intent.putStringArrayListExtra("district_info_list2", infoList2);
+
+                            startActivity(intent);
+
+
                         } else if (selectedDistrict.equals("Chapainawabganj")) {
                             Toast.makeText(HomeWork247_3.this, "You have selected Chapainawabganj in Rajshahi", Toast.LENGTH_SHORT).show();
                         } else if (selectedDistrict.equals("Joypurhat")) {
