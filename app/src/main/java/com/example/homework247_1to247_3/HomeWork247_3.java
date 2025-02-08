@@ -122,12 +122,20 @@ public class HomeWork247_3 extends AppCompatActivity {
                             intent.putStringArrayListExtra("image_urls", imageList);
 
                             ArrayList<String> infoList2 = new ArrayList<>();
-                            infoList2.add("Arnob");
-                            infoList2.add("Ayub Bacchu");
+                            infoList2.add("National Parliament");
+                            infoList2.add("Ahosan Monjil");
+                            infoList2.add("Hatirjheel");
+                            infoList2.add("Lalbagh Fort");
+                            infoList2.add("Central Shahid Minar");
+                            infoList2.add("Martyrs Intellectual Memorial");
 
                             ArrayList<String> imageList2 = new ArrayList<>();
-                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
-                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Dhaka/National%20Parliment.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Dhaka/Ahosan%20Monjil.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Dhaka/Hatirjheel.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Dhaka/Lalbagh%20Fort.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Dhaka/Central%20Shaheed%20Minar.png");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Dhaka/Martyred_Intellectuals_Memorial_,_Rayerbazar,_Dhaka.jpg");
 
                             intent.putStringArrayListExtra("image_urls2", imageList2);
                             intent.putStringArrayListExtra("district_info_list2", infoList2);

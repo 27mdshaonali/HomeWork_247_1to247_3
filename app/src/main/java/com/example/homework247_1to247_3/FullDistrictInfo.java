@@ -240,7 +240,8 @@ public class FullDistrictInfo extends AppCompatActivity {
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Blood Bank":
-                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    Toast.makeText(getApplicationContext(), selectedItem, Toast.LENGTH_SHORT).show();
+//                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Doctor":
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
