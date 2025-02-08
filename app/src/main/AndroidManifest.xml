@@ -17,6 +17,7 @@
         android:theme="@style/Theme.HomeWork247_1To247_3"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
             android:name=".ImageDetailActivity"
             android:exported="false" />

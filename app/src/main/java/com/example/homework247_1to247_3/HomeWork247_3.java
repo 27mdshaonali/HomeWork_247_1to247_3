@@ -245,6 +245,8 @@ public class HomeWork247_3 extends AppCompatActivity {
                     } else if (selectedDivision.equals("Rajshahi")) {
                         if (selectedDistrict.equals("Bogura")) {
 
+                            //======================= Natore District Has Started =======================//
+
                             Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
                             intent.putExtra("division_name", selectedDivision);
                             intent.putExtra("district_name", selectedDistrict);
@@ -290,8 +292,25 @@ public class HomeWork247_3 extends AppCompatActivity {
                             imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
                             imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
 
+                            ArrayList<String> newsNameList = new ArrayList<>();
+                            newsNameList.add("Amar Desh");
+                            newsNameList.add("BTV");
+                            newsNameList.add("ETV");
+                            newsNameList.add("Inqilab");
+                            newsNameList.add("Independent");
+
+                            ArrayList<String> newsImageList = new ArrayList<>();
+                            newsImageList.add("http://192.168.0.103/HomeWork%20247.2/Images/News/Amardesh.png");
+                            newsImageList.add("http://192.168.0.103/HomeWork%20247.2/Images/News/BTV.jpg");
+                            newsImageList.add("http://192.168.0.103/HomeWork%20247.2/Images/News/ETV.png");
+                            newsImageList.add("http://192.168.0.103/HomeWork%20247.2/Images/News/Inqilab.png");
+                            newsImageList.add("http://192.168.0.103/HomeWork%20247.2/Images/News/Independent%20TV.png");
+
+
                             intent.putStringArrayListExtra("image_urls2", imageList2);
                             intent.putStringArrayListExtra("district_info_list2", infoList2);
+                            intent.putStringArrayListExtra("news_name", newsNameList);
+                            intent.putStringArrayListExtra("news_image", newsImageList);
 
                             startActivity(intent);
 
@@ -305,39 +324,55 @@ public class HomeWork247_3 extends AppCompatActivity {
                         } else if (selectedDistrict.equals("Natore")) {
 
                             Intent intent = new Intent(getApplicationContext(), FullDistrictInfo.class);
-
                             intent.putExtra("division_name", selectedDivision);
                             intent.putExtra("district_name", selectedDistrict);
 
                             // Text list (District info items)
                             ArrayList<String> infoList = new ArrayList<>();
+                            infoList.add("News");
+                            infoList.add("Hospital");
+                            infoList.add("Blood Bank");
+                            infoList.add("Ambulance");
+                            infoList.add("Doctor");
+                            infoList.add("Fire Service");
+                            infoList.add("Journalist");
+                            infoList.add("DPDC");
+                            infoList.add("Educational Institution");
+                            infoList.add("Help Line");
                             infoList.add("Police Station");
-                            infoList.add("Heritage Place");
-                            infoList.add("Police Station");
-                            infoList.add("Heritage Place");
+                            infoList.add("Lawyer");
 
                             // Corresponding image URLs
                             ArrayList<String> imageList = new ArrayList<>();
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/natore1.jpg");
-                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Other%20Images/rayerbazar.jpg");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/news.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/hospital.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/blood.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/ambulance.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/doctor.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/fire_truck.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/journalist.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/electric_pole.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/education2.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/help_line.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/police.png");
+                            imageList.add("http://192.168.0.103/HomeWork%20247.2/Images/Services/lawyer.png");
 
                             intent.putStringArrayListExtra("district_info_list", infoList);
                             intent.putStringArrayListExtra("image_urls", imageList);
 
-
                             ArrayList<String> infoList2 = new ArrayList<>();
-                            infoList2.add("Arnob");
-                            infoList2.add("Ayub Bacchu");
-                            infoList2.add("Arnob");
-                            infoList2.add("Ayub Bacchu");
+                            infoList2.add("Uttara Ganobhaban");
+                            infoList2.add("Chalan Beel");
+                            infoList2.add("Natore Palace");
+                            infoList2.add("Museum of Chalanbil");
+                            infoList2.add("Bagatipara's Dayarampur Palace");
 
                             ArrayList<String> imageList2 = new ArrayList<>();
-                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
-                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
-                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Arnob.jpg");
-                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Ayub.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Natore/800px-%e0%a6%89%e0%a6%a4%e0%a7%8d%e0%a6%a4%e0%a6%b0%e0%a6%be_%e0%a6%97%e0%a6%a8%e0%a6%ac%e0%a6%ad%e0%a6%a8_%e0%a7%a7.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Natore/Chalan_Beel_Natore_Bangladesh_(7).JPG");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Natore/Rani_Vabani_Rajbari.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Natore/Chalanbil-Museum-Natore-770x420.jpg");
+                            imageList2.add("http://192.168.0.103/HomeWork%20247.2/Images/Natore/Bagatipara's%20Dayarampur%20Palace.jpg");
 
                             intent.putStringArrayListExtra("image_urls2", imageList2);
                             intent.putStringArrayListExtra("district_info_list2", infoList2);

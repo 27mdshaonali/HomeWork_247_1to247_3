@@ -1,5 +1,6 @@
 package com.example.homework247_1to247_3;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -179,9 +180,13 @@ public class FullDistrictInfo extends AppCompatActivity {
             return position;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
+
+            ArrayList<HashMap<String, String>> arrayList2 = new ArrayList<>();
+
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = inflater.inflate(R.layout.district_info, parent, false);
@@ -218,10 +223,14 @@ public class FullDistrictInfo extends AppCompatActivity {
                             switch (selectedItem) {
                                 case "Hospital":
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
-                                    ImageDetailActivity.DIS_NAME = "Hospital";
+                                    ImageDetailActivity.TITLE_NAME = selectedItem;
+                                    ImageDetailActivity.DIS_NAME = districtName;
+                                    ImageDetailActivity.DIV_NAME = divisionName;
                                     break;
                                 case "Police Station":
-                                    ImageDetailActivity.DIS_NAME = "Police Station";
+                                    ImageDetailActivity.TITLE_NAME = selectedItem;
+                                    ImageDetailActivity.DIS_NAME = districtName;
+                                    ImageDetailActivity.DIV_NAME = divisionName;
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
                                     break;
                                 case "Fire Service":
@@ -253,6 +262,10 @@ public class FullDistrictInfo extends AppCompatActivity {
                                     break;
                                 case "News":
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName;
+                                    ImageDetailActivity.DIV_NAME = divisionName;
+                                    ImageDetailActivity.TITLE_NAME = selectedItem;
+
                                     break;
                             }
                         }
@@ -338,28 +351,69 @@ public class FullDistrictInfo extends AppCompatActivity {
                         startActivity(intent);
                     }
 
+                    //========================== Rajshahi Division Has Started ==========================
+
                 } else if (selectedDivision.equals("Rajshahi")) {
-                    if (selectedDistrict.equals("Bogura")) {
+
+                    //========================== Natore District Has Started ==========================
+
+                    if (selectedDistrict.equals("Natore")) {
                         String selectedItem = item.get("info_title");
 
                         Intent intent = null;
 
                         if (selectedItem != null) {
                             switch (selectedItem) {
-                                case "Police Station":
+                                case "Hospital":
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName + selectedDistrict;
+                                    ImageDetailActivity.DIV_NAME = divisionName;
+                                    ImageDetailActivity.TITLE_NAME = selectedItem;
+
+                                    //Bitmap itemImageBitmap = ((BitmapDrawable) itemImage.getDrawable()).getBitmap();
+
+                                    //Add here listView for hospital
+
+                                    break;
+                                case "Police Station":
                                     ImageDetailActivity.DIS_NAME = districtName + " Police Station";
+
+                                    Toast.makeText(getApplicationContext(), "Police Station", Toast.LENGTH_SHORT).show();
                                     break;
                                 case "Fire Service":
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
-                                    ImageDetailActivity.DIS_NAME = districtName + " Fire Service";
                                     break;
                                 case "Ambulance":
                                     intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
-                                    ImageDetailActivity.DIS_NAME = districtName + " Ambulance";
+                                    break;
+                                case "Blood Bank":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Doctor":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Educational Institution":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Lawyer":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Journalist":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "DPDC":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "Help Line":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    break;
+                                case "News":
+                                    intent = new Intent(getApplicationContext(), ImageDetailActivity.class);
+                                    ImageDetailActivity.DIS_NAME = districtName + selectedDistrict;
+                                    ImageDetailActivity.DIV_NAME = divisionName;
+                                    ImageDetailActivity.TITLE_NAME = selectedItem;
                                     break;
                             }
-
                         }
 
                         if (intent != null) {
@@ -373,7 +427,7 @@ public class FullDistrictInfo extends AppCompatActivity {
                 }
 
 
-                Toast.makeText(getApplicationContext(), "Clicked: " + item.get("info_title"), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Clicked: " + item.get("info_title"), Toast.LENGTH_SHORT).show();
 
 
             });
